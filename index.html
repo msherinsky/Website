@@ -1147,6 +1147,26 @@
       background: #fff;
       overflow-y: auto;
     }
+    .cal-nav {
+      padding: 10px 16px;
+      border-bottom: 1px solid #eef0f4;
+    }
+    .cal-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 6px;
+      transition: color .2s, background .2s;
+    }
+    .cal-back-btn:hover { color: var(--blue); background: var(--blue-light); }
     #cal-inline-container {
       width: 100%;
       min-height: 560px;
@@ -1188,6 +1208,12 @@
         </ul>
       </div>
       <div class="booking-right">
+        <div class="cal-nav">
+          <button class="cal-back-btn" id="calBack">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            Back to calendar
+          </button>
+        </div>
         <div id="cal-inline-container"></div>
       </div>
     </div>
@@ -1869,8 +1895,18 @@
       document.body.style.overflow = '';
     }
 
+    function resetCalEmbed() {
+      document.getElementById('cal-inline-container').innerHTML = '';
+      Cal("inline", {
+        elementOrSelector: "#cal-inline-container",
+        calLink: "matt-sherinsky/30min",
+        config: { layout: "month_view" }
+      });
+    }
+
     document.getElementById('bookingClose').addEventListener('click', closeBookingModal);
     document.getElementById('bookingOverlay').addEventListener('click', closeBookingModal);
+    document.getElementById('calBack').addEventListener('click', resetCalEmbed);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBookingModal(); });
 
     document.querySelectorAll('[data-book]').forEach(el => {
