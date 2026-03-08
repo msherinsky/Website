@@ -1146,29 +1146,24 @@
     .booking-right {
       background: #fff;
       overflow-y: auto;
-      position: relative;
     }
     .cal-back-btn {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      z-index: 10;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       font-family: 'DM Sans', sans-serif;
       font-size: 13px;
-      font-weight: 600;
-      color: var(--text);
-      background: #fff;
-      border: 1.5px solid var(--border);
+      font-weight: 500;
+      color: rgba(255,255,255,.5);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
       cursor: pointer;
-      padding: 6px 12px;
+      padding: 7px 14px;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(13,27,51,.08);
-      transition: color .2s, border-color .2s, box-shadow .2s;
+      transition: color .2s, background .2s, border-color .2s;
+      width: fit-content;
     }
-    .cal-back-btn:hover { color: var(--blue); border-color: var(--blue); box-shadow: 0 2px 12px rgba(29,111,255,.18); }
+    .cal-back-btn:hover { color: var(--white); background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.22); }
     #cal-inline-container {
       width: 100%;
       min-height: 560px;
@@ -1208,12 +1203,12 @@
             No missed calls, no lost leads — ever
           </li>
         </ul>
-      </div>
-      <div class="booking-right">
-        <button class="cal-back-btn" id="calBack">
+        <button class="cal-back-btn" id="calBack" style="margin-top:auto;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
           Back to calendar
         </button>
+      </div>
+      <div class="booking-right">
         <div id="cal-inline-container"></div>
       </div>
     </div>
