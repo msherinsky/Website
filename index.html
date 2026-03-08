@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welgent — AI That Answers Calls & Books Appointments</title>
+    <title>Welgent — AI Employees That Answer Calls & Book Appointments</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -138,7 +138,7 @@
         }
         .blob-1 {
             width: 600px; height: 600px;
-            background: radial-gradient(circle, #BAE6FD, #E0F2FE);
+            background: radial-gradient(circle, #38BDF8, #7DD3FC);
             top: -100px; right: -100px; animation-duration: 9s;
         }
         .blob-2 {
@@ -149,7 +149,7 @@
         }
         .blob-3 {
             width: 300px; height: 300px;
-            background: radial-gradient(circle, #BAE6FD, #E0F2FE);
+            background: radial-gradient(circle, #38BDF8, #7DD3FC);
             top: 40%; left: 40%;
             animation-duration: 7s; animation-delay: -1.5s;
         }
@@ -160,8 +160,8 @@
         .hero-grid {
             position: absolute; inset: 0;
             background-image:
-                linear-gradient(rgba(14, 165, 233, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(14, 165, 233, 0.04) 1px, transparent 1px);
+                linear-gradient(rgba(14, 165, 233, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(14, 165, 233, 0.07) 1px, transparent 1px);
             background-size: 60px 60px;
         }
         .hero-content { position: relative; z-index: 1; max-width: 760px; padding: 80px 0; }
@@ -291,7 +291,7 @@
 
         /* ======== SERVICES ======== */
         .services { background: var(--bg-gray); }
-        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .service-card {
             background: white; border: 1px solid var(--border);
             border-radius: var(--radius); padding: 40px 36px;
@@ -391,19 +391,19 @@
         }
         .why-visual {
             border-radius: 24px; height: 460px;
-            background: linear-gradient(135deg, #E0F2FE 0%, #CCFBF1 50%, #BAE6FD 100%);
+            background: linear-gradient(135deg, #0369A1 0%, #0EA5E9 45%, #0D9488 100%);
             position: relative; overflow: hidden;
         }
         .why-visual-blob1 {
             position: absolute; top: -30%; left: -30%;
             width: 80%; height: 80%; border-radius: 50%;
-            background: rgba(14, 165, 233, 0.2);
+            background: rgba(255, 255, 255, 0.12);
             animation: blobFloat 8s ease-in-out infinite alternate;
         }
         .why-visual-blob2 {
             position: absolute; bottom: -20%; right: -20%;
             width: 60%; height: 60%; border-radius: 50%;
-            background: rgba(20, 184, 166, 0.25);
+            background: rgba(20, 184, 166, 0.35);
             animation: blobFloat 11s ease-in-out infinite alternate-reverse;
         }
         .why-visual-inner {
@@ -412,8 +412,9 @@
         }
         .why-visual-text {
             font-family: 'Fraunces', serif; font-size: 5rem;
-            font-weight: 700; color: rgba(255,255,255,0.65);
+            font-weight: 700; color: #ffffff;
             letter-spacing: -0.04em; text-align: center; line-height: 1;
+            text-shadow: 0 2px 24px rgba(0,0,0,0.18);
         }
         .why-visual-badge {
             position: absolute; bottom: 32px; left: 32px;
@@ -534,6 +535,57 @@
         }
         .footer-legal a:hover { color: rgba(255,255,255,0.6); }
 
+        /* ======== STATS STRIP ======== */
+        .stats-strip {
+            background: #080E1A;
+            padding: 72px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+        .stat-item {
+            text-align: center; padding: 0 40px;
+            border-right: 1px solid rgba(255,255,255,0.07);
+        }
+        .stat-item:last-child { border-right: none; }
+        .stat-number {
+            font-family: 'Fraunces', serif; font-size: 3.75rem;
+            font-weight: 700; color: #38BDF8; line-height: 1;
+            letter-spacing: -0.03em; display: block;
+        }
+        .stat-label {
+            color: rgba(255,255,255,0.8); font-size: 0.875rem;
+            font-weight: 500; margin-top: 10px; display: block; line-height: 1.4;
+        }
+        .stat-source {
+            color: rgba(255,255,255,0.28); font-size: 0.68rem;
+            margin-top: 6px; display: block; letter-spacing: 0.02em;
+        }
+
+        /* ======== STAT BADGES (problem cards) ======== */
+        .stat-badge {
+            display: inline-flex; align-items: center; gap: 5px;
+            background: rgba(14, 165, 233, 0.08);
+            border: 1px solid rgba(14, 165, 233, 0.22);
+            color: #0EA5E9; font-size: 0.72rem; font-weight: 700;
+            padding: 4px 10px; border-radius: 20px;
+            margin-bottom: 12px; letter-spacing: 0.03em; text-transform: uppercase;
+        }
+
+        /* ======== WHY FLOATING STATS ======== */
+        .why-stat {
+            position: absolute; background: white; border-radius: 12px;
+            padding: 14px 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.22); z-index: 3;
+        }
+        .why-stat-num {
+            font-family: 'Fraunces', serif; font-size: 1.6rem;
+            font-weight: 700; color: var(--primary); line-height: 1;
+        }
+        .why-stat-label { font-size: 0.72rem; color: var(--text-muted); margin-top: 3px; font-weight: 500; }
+        .why-stat-1 { top: 28px; left: 28px; }
+        .why-stat-2 { bottom: 28px; right: 28px; }
+        .why-stat-3 { bottom: 28px; left: 28px; }
+
         /* ======== RESPONSIVE ======== */
         @media (max-width: 900px) {
             .nav-links, nav > .container > .nav-inner > .btn-nav { display: none; }
@@ -541,9 +593,12 @@
             .services-grid { grid-template-columns: 1fr; }
             .why-grid { grid-template-columns: 1fr; gap: 48px; }
             .why-visual { height: 280px; }
-.footer-top { grid-template-columns: 1fr 1fr; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
             .process-steps { grid-template-columns: 1fr; gap: 40px; }
             .process-steps::before { display: none; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+            .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 40px; }
+            .stat-item:nth-child(2n) { border-bottom: none; }
         }
         @media (max-width: 600px) {
             section { padding: 70px 0; }
@@ -570,7 +625,7 @@
                 <li><a href="#process">Process</a></li>
                 <li><a href="#about">About</a></li>
             </ul>
-            <a href="#contact" class="btn-nav">Book a Call</a>
+            <a href="#" class="btn-nav" data-cal-link="matt-sherinsky/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Demo</a>
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -582,7 +637,7 @@
     <a href="#services" class="mobile-link">Services</a>
     <a href="#process" class="mobile-link">Process</a>
     <a href="#about" class="mobile-link">About</a>
-    <a href="#contact" class="btn-nav">Book a Call</a>
+    <a href="#" class="btn-nav" data-cal-link="matt-sherinsky/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Demo</a>
 </div>
 
 <!-- HERO -->
@@ -595,13 +650,13 @@
     </div>
     <div class="container">
         <div class="hero-content">
-            <div class="hero-eyebrow reveal">AI Voice &amp; Booking for Local Business</div>
-            <h1 class="reveal reveal-delay-1">Never miss a call.<br>Never lose a lead.<br><em>Never again.</em></h1>
-            <p class="hero-sub reveal reveal-delay-2">Your AI employee answers every call, books appointments on the spot, and follows up with customers automatically — 24/7, without you lifting a finger. No more lost leads. No more customers slipping through the cracks.</p>
+            <div class="hero-eyebrow reveal">For local businesses losing leads every day</div>
+            <h1 class="reveal reveal-delay-1">62% of Calls to Local Businesses<br>Go Unanswered.<br><em>Yours Won't.</em></h1>
+            <p class="hero-sub reveal reveal-delay-2">Right now, someone is trying to reach a business like yours. If the phone doesn't answer — they call the next one on Google. If nobody follows up within 5 minutes — they book somewhere else. We built a digital employee that handles all of it. Every call. Every follow-up. Every review request. 24/7. Automatically.</p>
             <div class="hero-ctas reveal reveal-delay-3">
-                <a href="#contact" class="btn-primary">
+                <a href="#" class="btn-primary" data-cal-link="matt-sherinsky/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="9" rx="1.5" stroke="white" stroke-width="1.5"/><path d="M2 7l5.586 3.293a1 1 0 001.012.013L14 7" stroke="white" stroke-width="1.5"/></svg>
-                    Book a Free Call
+                    Book a Demo
                 </a>
                 <a href="#process" class="btn-ghost">
                     See How It Works
@@ -615,7 +670,7 @@
 <!-- LOGOS BAR -->
 <div class="logos-bar">
     <div class="container">
-        <p class="logos-label">Built for local businesses that can't afford to miss a call</p>
+        <p class="logos-label">Your industry. Your leads. Booked automatically.</p>
         <div class="logos-row">
             <span class="logo-item">Hair Salons</span>
             <span class="logo-item">Dental Practices</span>
@@ -627,13 +682,41 @@
     </div>
 </div>
 
+<!-- STATS STRIP -->
+<div class="stats-strip">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item reveal">
+                <span class="stat-number">62%</span>
+                <span class="stat-label">of calls to local businesses<br>go unanswered</span>
+                <span class="stat-source">MIT / InsideSales Research</span>
+            </div>
+            <div class="stat-item reveal reveal-delay-1">
+                <span class="stat-number">21×</span>
+                <span class="stat-label">more likely to close when you<br>respond within 5 minutes</span>
+                <span class="stat-source">Harvard Business Review</span>
+            </div>
+            <div class="stat-item reveal reveal-delay-2">
+                <span class="stat-number">96%</span>
+                <span class="stat-label">of customers check reviews<br>before choosing a business</span>
+                <span class="stat-source">BrightLocal 2026</span>
+            </div>
+            <div class="stat-item reveal reveal-delay-3">
+                <span class="stat-number">48%</span>
+                <span class="stat-label">of businesses never follow up<br>after the first contact</span>
+                <span class="stat-source">Lusha / IRC Sales Research</span>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- PROBLEM -->
 <section class="problem" id="about">
     <div class="container">
         <div class="section-header">
             <span class="section-label reveal">The Problem</span>
-            <h2 class="section-heading reveal reveal-delay-1">Every missed call is<br>a customer lost forever</h2>
-            <p class="section-sub reveal reveal-delay-2">When you're with a customer, on a job, or simply closed for the night — your phone rings and nobody answers. That caller doesn't leave a voicemail. They call your competitor instead.</p>
+            <h2 class="section-heading reveal reveal-delay-1">Here's what it's actually<br>costing you.</h2>
+            <p class="section-sub reveal reveal-delay-2">Not all at once. Just one small leak at a time — quietly bleeding revenue you don't even know you're losing.</p>
         </div>
         <div class="problem-cards">
             <div class="problem-card reveal">
@@ -643,8 +726,9 @@
                         <path d="M11 7v4l3 2"/>
                     </svg>
                 </div>
-                <h3>Calls going to voicemail</h3>
-                <p>Most callers hang up the moment they hit voicemail. If you're busy or unavailable, that lead is gone — and you never even knew they called.</p>
+                <div class="stat-badge">62% go unanswered</div>
+                <h3>A lead called at 9pm.</h3>
+                <p>They didn't leave a voicemail. They hit the next business on Google. You were already done for the day. By morning, they'd already booked.</p>
             </div>
             <div class="problem-card reveal reveal-delay-1">
                 <div class="card-icon">
@@ -653,8 +737,9 @@
                         <path d="M9 11l2 2 4-4"/>
                     </svg>
                 </div>
-                <h3>No-shows killing your schedule</h3>
-                <p>Customers forget. Life happens. Without consistent follow-up reminders, appointments get missed and your calendar fills with empty slots that cost you real money.</p>
+                <div class="stat-badge">21× conversion advantage</div>
+                <h3>The 5-minute rule.</h3>
+                <p>The business that responds first gets the sale. The one that responds an hour later loses it. Manually, that's impossible to win consistently. Automatically, it's easy.</p>
             </div>
             <div class="problem-card reveal reveal-delay-2">
                 <div class="card-icon">
@@ -665,8 +750,9 @@
                         <rect x="12" y="12" width="8" height="8" rx="1"/>
                     </svg>
                 </div>
-                <h3>Leads going cold with no follow-up</h3>
-                <p>Someone enquires, you mean to follow up, but you get busy and it slips. Two days later they've already booked somewhere else. It's not laziness — it's just not scalable to do manually.</p>
+                <div class="stat-badge">96% check reviews first</div>
+                <h3>Your best customers aren't reviewing you.</h3>
+                <p>They would — if someone asked at the right moment. Nobody's asking. Your competitor with worse service has 300 more reviews and ranks above you. That's fixable.</p>
             </div>
         </div>
     </div>
@@ -677,8 +763,8 @@
     <div class="container">
         <div class="section-header">
             <span class="section-label reveal">What We Do</span>
-            <h2 class="section-heading reveal reveal-delay-1">Your AI handles the calls.<br>You handle the business.</h2>
-            <p class="section-sub reveal reveal-delay-2">We build and deploy an AI system that works for you around the clock — answering calls, filling your calendar, and keeping customers engaged automatically.</p>
+            <h2 class="section-heading reveal reveal-delay-1">Your digital employee.<br>Seven jobs. Zero overhead.</h2>
+            <p class="section-sub reveal reveal-delay-2">From the moment a lead discovers you to the moment they leave a glowing review — every step handled automatically, 24/7.</p>
         </div>
         <div class="services-grid">
             <div class="service-card reveal">
@@ -687,35 +773,62 @@
                         <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                     </svg>
                 </div>
-                <h3>AI Phone Answering</h3>
-                <p>Your AI picks up every call — even at 11pm on a Sunday. It speaks naturally, answers common questions, and makes sure no caller ever hits voicemail again.</p>
+                <h3>AI Voice Agent</h3>
+                <p>Picks up every call. Day or night. Has a real conversation — not a script — answers questions, qualifies the caller, and books the appointment. You just see it on your calendar.</p>
             </div>
             <div class="service-card reveal reveal-delay-1">
                 <div class="service-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="1.5" stroke-linecap="round">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
                     </svg>
                 </div>
-                <h3>Instant Appointment Booking</h3>
-                <p>Callers and enquiries get booked directly into your calendar — no back-and-forth, no manual entry. Your schedule fills itself while you focus on the work in front of you.</p>
+                <h3>Website Chat Agent</h3>
+                <p>Visitors browse, your agent engages. Collects name, email, number, appointment time — confirms and books. Same result as the voice agent, different channel. No lead slips through because they didn't want to call.</p>
             </div>
             <div class="service-card reveal reveal-delay-2">
                 <div class="service-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="1.5" stroke-linecap="round">
-                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
                 </div>
-                <h3>Automated Customer Follow-Up</h3>
-                <p>Appointment reminders, post-visit check-ins, re-engagement messages — your AI follows up with every customer at exactly the right time, so nothing ever slips through the cracks.</p>
+                <h3>Lead Follow-Up</h3>
+                <p>Someone enquires. Within seconds, they get a personalised response. Not a template. Not an hour later. Instantly. The 5-minute rule — automated so you win it every time.</p>
             </div>
             <div class="service-card reveal reveal-delay-3">
                 <div class="service-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="1.5" stroke-linecap="round">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
                     </svg>
                 </div>
-                <h3>Ongoing Optimisation</h3>
-                <p>We monitor how your AI is performing, tune it as your business evolves, and keep adding improvements — so it keeps getting better the longer you use it.</p>
+                <h3>Pre-Appointment Nurture</h3>
+                <p>The gap between booking and showing up is where no-shows are born. We send a sequence that builds excitement and handles last-minute doubt — so they arrive ready to commit, not cold.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-1">
+                <div class="service-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="1.5" stroke-linecap="round">
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <h3>Post-Visit Follow-Up</h3>
+                <p>After every appointment, your agent checks in and offers next steps. It's the difference between a one-time customer and a loyal one. Happens automatically — nothing slips, nothing gets forgotten.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-2">
+                <div class="service-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="1.5" stroke-linecap="round">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </div>
+                <h3>Review Request Automation</h3>
+                <p>Timed at peak emotion — right after a great experience. Not when you remember. Not awkwardly in person. At exactly the right moment. Your star rating climbs on its own.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-3" style="grid-column: 2;">
+                <div class="service-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="1.5" stroke-linecap="round">
+                        <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/>
+                    </svg>
+                </div>
+                <h3>Dead Lead Reactivation</h3>
+                <p>You already paid for these leads. They enquired, went quiet, got forgotten. Your agent reaches back out with a message that restarts the conversation. Most businesses see 10–30% of cold leads come back and book.</p>
             </div>
         </div>
     </div>
@@ -726,27 +839,27 @@
     <div class="container">
         <div class="section-header centered">
             <span class="section-label reveal">How It Works</span>
-            <h2 class="section-heading reveal reveal-delay-1">Up and running in days,<br>not months</h2>
-            <p class="section-sub reveal reveal-delay-2">We handle everything. You just show up for a call, and within days your AI is live and working.</p>
+            <h2 class="section-heading reveal reveal-delay-1">One call with us.<br>Everything else is handled.</h2>
+            <p class="section-sub reveal reveal-delay-2">No tech knowledge needed. No long setup. Most clients are live within days of deciding to move forward.</p>
         </div>
         <div class="process-steps">
             <div class="process-step reveal">
                 <div class="step-number">1</div>
-                <span class="step-tag">Discovery</span>
-                <h3>Tell us how your business runs</h3>
-                <p>A free 30-min call where we learn about your business — how calls come in, how you book appointments, what follow-up looks like today. No tech knowledge needed.</p>
+                <span class="step-tag">Demo</span>
+                <h3>See it working live</h3>
+                <p>We demo the voice agent and chat agent for a business like yours. You see the full lead journey — first contact to booked appointment. 30 minutes. No commitment.</p>
             </div>
             <div class="process-step reveal reveal-delay-1">
                 <div class="step-number">2</div>
                 <span class="step-tag">Build</span>
-                <h3>We configure your AI</h3>
-                <p>We build and train your AI to sound like your business, handle your specific services, and connect directly to your calendar and booking system.</p>
+                <h3>We configure everything</h3>
+                <p>We build the agents around your business — your services, your voice, your calendar. You review it and tell us what to adjust. We handle the rest. You don't touch a line of code.</p>
             </div>
             <div class="process-step reveal reveal-delay-2">
                 <div class="step-number">3</div>
                 <span class="step-tag">Go Live</span>
-                <h3>Your AI starts working</h3>
-                <p>We flip the switch and your AI is live — answering calls, booking appointments, and following up with customers while you get on with your day.</p>
+                <h3>It runs. You focus.</h3>
+                <p>Calls get answered. Visitors get engaged. Leads get followed up. Reviews get requested. Dead leads come back. All of it runs while you focus on the job in front of you.</p>
             </div>
         </div>
     </div>
@@ -758,28 +871,32 @@
         <div class="why-grid">
             <div class="why-left reveal">
                 <span class="section-label">Why Welgent</span>
-                <h2>Your AI works 24/7.<br><em>You finally don't have to.</em></h2>
-                <p>You didn't start your business to be glued to your phone. With Welgent, every call gets answered, every appointment gets booked, and every customer gets followed up — automatically, without you being involved.</p>
+                <h2>One extra booking a month<br><em>covers everything.</em></h2>
+                <p>One client covers the month. The real question isn't the cost — it's how much you're losing right now without this. This isn't overhead. It's the employee you've been putting off hiring. Except it never calls in sick.</p>
                 <ul class="why-list">
                     <li>
                         <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#E0F2FE"/><path d="M6 10l3 3 5-5" stroke="#0EA5E9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Answers every call — 24/7, including evenings, weekends, and holidays
+                        Answers every call 24/7 — and engages every website visitor. No voicemail. No missed leads.
                     </li>
                     <li>
                         <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#E0F2FE"/><path d="M6 10l3 3 5-5" stroke="#0EA5E9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Books appointments directly into your calendar — no double-booking, no manual entry
+                        Follows up with new leads instantly — before they've looked at your competitor
                     </li>
                     <li>
                         <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#E0F2FE"/><path d="M6 10l3 3 5-5" stroke="#0EA5E9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Follows up with leads and customers automatically — no more dropped balls
+                        Nurtures booked leads before they arrive — so they show up ready, not cold
                     </li>
                     <li>
                         <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#E0F2FE"/><path d="M6 10l3 3 5-5" stroke="#0EA5E9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        First call is free — you'll see exactly what it can do before committing a penny
+                        Follows up after visits and sends review requests at exactly the right moment
                     </li>
                     <li>
                         <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#E0F2FE"/><path d="M6 10l3 3 5-5" stroke="#0EA5E9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Month-to-month — no long-term contracts, cancel any time
+                        Reactivates dead leads — turns old enquiries into booked appointments
+                    </li>
+                    <li>
+                        <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#E0F2FE"/><path d="M6 10l3 3 5-5" stroke="#0EA5E9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Demo is free. Month-to-month after that — no contracts, cancel any time.
                     </li>
                 </ul>
             </div>
@@ -790,7 +907,18 @@
                     <div class="why-visual-inner">
                         <div class="why-visual-text">AI<br>done<br>right.</div>
                     </div>
-
+                    <div class="why-stat why-stat-1">
+                        <div class="why-stat-num">24/7</div>
+                        <div class="why-stat-label">Always answering</div>
+                    </div>
+                    <div class="why-stat why-stat-2">
+                        <div class="why-stat-num">&lt;60s</div>
+                        <div class="why-stat-label">Lead response time</div>
+                    </div>
+                    <div class="why-stat why-stat-3">
+                        <div class="why-stat-num">38%</div>
+                        <div class="why-stat-label">Fewer no-shows</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -802,43 +930,43 @@
     <div class="container">
         <div class="section-header centered">
             <span class="section-label reveal">Common Questions</span>
-            <h2 class="section-heading reveal reveal-delay-1">Things people usually ask<br>before booking a call</h2>
+            <h2 class="section-heading reveal reveal-delay-1">Things people usually ask<br>before booking a demo</h2>
         </div>
         <div class="objections-grid">
             <div class="objection-item reveal">
                 <button class="objection-q" onclick="toggleObj(this)">
-                    "Will the AI actually sound like a real person?"
+                    "Will it actually sound like a real person?"
                     <svg class="chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
                 <div class="objection-a">
-                    Yes — and it sounds like your business specifically. We train it on your services, your tone, and the kinds of questions your customers actually ask. Most callers won't know they're speaking to an AI. And for the ones that do ask, it handles that too.
+                    Yes — and it sounds like your business specifically. We train it on your services, your FAQs, and your tone. It's a real conversation, not a robot reading a script. Most callers won't know it's AI. For the ones who do ask, it handles that gracefully too.
                 </div>
             </div>
             <div class="objection-item reveal reveal-delay-1">
                 <button class="objection-q" onclick="toggleObj(this)">
-                    "What happens with calls that need a real human?"
+                    "What's the difference between the voice agent and the chat agent?"
                     <svg class="chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
                 <div class="objection-a">
-                    The AI knows its limits. If a call is complex, urgent, or needs a human touch, it smoothly hands off to you or takes a detailed message and flags it immediately. You stay in control — you just don't have to be available for every single call anymore.
+                    They do the same job through different channels. The voice agent answers your phone calls — it speaks with callers, handles questions, and books appointments. The chat agent lives on your website and does the same thing through conversation — collects their details, finds a time, confirms, and books. Same outcome, whether they called or clicked.
                 </div>
             </div>
             <div class="objection-item reveal reveal-delay-2">
                 <button class="objection-q" onclick="toggleObj(this)">
-                    "How much does this cost?"
+                    "What happens with calls that need a real person?"
                     <svg class="chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
                 <div class="objection-a">
-                    The first call is completely free. After that, pricing depends on your call volume and which features you need. Everything is month-to-month — no long-term contracts. Most clients find that the extra bookings and recovered leads pay for the service many times over within the first month.
+                    The agent knows its limits. Complex, urgent, or sensitive situations get flagged and handed off immediately — with a full summary of the conversation. You stay in control. You just don't have to be available for every single call anymore.
                 </div>
             </div>
             <div class="objection-item reveal reveal-delay-3">
                 <button class="objection-q" onclick="toggleObj(this)">
-                    "How long does it take to set up?"
+                    "How much does it cost?"
                     <svg class="chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
                 <div class="objection-a">
-                    Most clients are live within 3–5 business days of our first call. We handle all the setup, configuration, and testing. You don't need to do anything technical — just review it, approve it, and let it run.
+                    The demo is completely free. After that, pricing depends on what you need. Everything is month-to-month — no long-term contracts. For most businesses, one extra booking a month covers the cost. Most clients see that within the first week.
                 </div>
             </div>
         </div>
@@ -852,13 +980,12 @@
     <div class="container">
         <div class="cta-content">
             <span class="section-label reveal" style="color:rgba(255,255,255,0.45)">Get Started</span>
-            <h2 class="reveal reveal-delay-1">Stop losing leads.<br>Start with a <em>free call</em>.</h2>
-            <p class="reveal reveal-delay-2">In 30 minutes we'll show you exactly how your AI would work — answering calls, booking appointments, and following up with customers for your specific business. No pressure, no tech-speak.</p>
-            <form class="email-form reveal reveal-delay-3" onsubmit="handleSubmit(event)">
-                <input type="email" class="email-input" placeholder="Your work email" required>
-                <button type="submit" class="btn-cta">Book My Free Call &rarr;</button>
-            </form>
-            <p class="cta-note reveal reveal-delay-4">We'll show you exactly what your AI would do — before you spend a single penny.</p>
+            <h2 class="reveal reveal-delay-1">Let's start where<br><em>it hurts most.</em></h2>
+            <p class="reveal reveal-delay-2">I don't need you to buy everything today. Tell me your biggest problem right now — and that's where we start. Missing after-hours leads? Start with the voice agent. Too many no-shows? Start with the nurture sequence. Dead leads sitting in your pipeline? Start with reactivation. Book 30 minutes. I'll show you exactly what it looks like for your business.</p>
+            <div class="reveal reveal-delay-3">
+                <button class="btn-cta" data-cal-link="matt-sherinsky/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Demo &rarr;</button>
+            </div>
+            <p class="cta-note reveal reveal-delay-4">You see it working before you spend a penny. No pressure, no tech-speak.</p>
         </div>
     </div>
 </section>
@@ -869,14 +996,17 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <a href="#" class="nav-logo">Wel<span>gent</span></a>
-                <p class="footer-tagline">AI that answers your calls, books your appointments, and follows up with every customer — so no lead ever slips through the cracks.</p>
+                <p class="footer-tagline">Conversational AI that answers your calls, engages your website visitors, and books appointments automatically — 24/7, without you doing a thing.</p>
             </div>
             <div class="footer-col">
                 <h4>Services</h4>
-                <a href="#services">AI Phone Answering</a>
-                <a href="#services">Appointment Booking</a>
-                <a href="#services">Customer Follow-Up</a>
-                <a href="#services">Ongoing Optimisation</a>
+                <a href="#services">AI Voice Agent</a>
+                <a href="#services">Website Chat Agent</a>
+                <a href="#services">Lead Follow-Up</a>
+                <a href="#services">Pre-Appointment Nurture</a>
+                <a href="#services">Post-Visit Follow-Up</a>
+                <a href="#services">Review Requests</a>
+                <a href="#services">Dead Lead Reactivation</a>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
@@ -887,7 +1017,7 @@
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <a href="#contact">Book a Call</a>
+                <a href="#" data-cal-link="matt-sherinsky/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a Demo</a>
                 <a href="mailto:hello@welgent.com">hello@welgent.com</a>
                 <a href="#">LinkedIn</a>
             </div>
@@ -961,5 +1091,13 @@
         }, 4000);
     }
 </script>
+
+<!-- Cal element-click embed code begins -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "30min", {origin:"https://app.cal.com"});
+  Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+<!-- Cal element-click embed code ends -->
 </body>
 </html>
