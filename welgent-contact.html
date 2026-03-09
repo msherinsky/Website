@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Welgent</title>
+  <meta name="description" content="Get in touch with Welgent. We'll reach out by SMS to set up your demo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       DESIGN TOKENS (matches index.html)
+    ============================================================ */
+    :root {
+      --navy:       #060F22;
+      --navy-mid:   #0C1E3E;
+      --blue:       #1D6FFF;
+      --blue-dark:  #1558D6;
+      --blue-mid:   #4B8BF5;
+      --blue-light: #EBF2FF;
+      --teal:       #00C9B1;
+      --green:      #22C55E;
+      --white:      #FFFFFF;
+      --off-white:  #F6F9FF;
+      --text:       #0D1B33;
+      --muted:      #637799;
+      --border:     #DDE6F5;
+      --r:          16px;
+      --r-sm:       10px;
+      --shadow-sm:  0 1px 4px rgba(13,27,51,.06), 0 2px 12px rgba(13,27,51,.04);
+      --shadow-md:  0 4px 16px rgba(13,27,51,.08), 0 12px 40px rgba(13,27,51,.06);
+      --shadow-lg:  0 8px 32px rgba(13,27,51,.12), 0 24px 64px rgba(13,27,51,.08);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    h1, h2, h3, h4 {
+      font-family: 'Manrope', sans-serif;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    /* ============================================================
+       LAYOUT
+    ============================================================ */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--r-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(29,111,255,.3);
+    }
+    .btn-primary:hover:not(:disabled) {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(29,111,255,.4);
+    }
+    .btn-primary:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    .btn-ghost {
+      background: rgba(255,255,255,.08);
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,.2);
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.35);
+    }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    #mainNav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 32px;
+    }
+    .nav-logo {
+      font-family: 'Manrope', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.04em;
+    }
+    .nav-logo span { color: var(--blue-mid); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,.65);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color 0.15s ease, background 0.15s ease;
+    }
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,.07); }
+    .nav-links a.active { color: var(--white); }
+
+    /* ============================================================
+       HERO / PAGE HEADER
+    ============================================================ */
+    .page-header {
+      background: var(--navy);
+      padding: 80px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 700px 400px at 60% 50%, rgba(29,111,255,.12) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 300px at 15% 80%, rgba(0,201,177,.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .page-header .container { position: relative; }
+    .page-header-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(0,201,177,.1);
+      border: 1px solid rgba(0,201,177,.2);
+      border-radius: 100px;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+    .page-header h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .page-header p {
+      font-size: 18px;
+      color: rgba(255,255,255,.6);
+      max-width: 480px;
+    }
+
+    /* ============================================================
+       CONTACT SECTION
+    ============================================================ */
+    .contact-section {
+      background: var(--off-white);
+      padding: 80px 0 100px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* Left: info / trust */
+    .contact-info {
+      padding-top: 8px;
+    }
+    .contact-info h2 {
+      font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .contact-info p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .contact-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .contact-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .step-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-icon svg {
+      width: 18px;
+      height: 18px;
+      color: var(--blue);
+    }
+    .step-text strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .step-text span {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Right: form card */
+    .contact-card {
+      background: var(--white);
+      border-radius: var(--r);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 40px;
+    }
+    .contact-card h3 {
+      font-size: 1.35rem;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .contact-card .card-sub {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    /* Form */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .form-group:last-of-type { margin-bottom: 0; }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.01em;
+    }
+    .form-group label .required {
+      color: var(--blue);
+      margin-left: 2px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      outline: none;
+    }
+    .form-group input::placeholder { color: #b0bdd4; }
+    .form-group input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(29,111,255,.12);
+    }
+    .form-group input.error {
+      border-color: #e53e3e;
+      box-shadow: 0 0 0 3px rgba(229,62,62,.1);
+    }
+    .field-error {
+      font-size: 12px;
+      color: #e53e3e;
+      margin-top: 2px;
+      display: none;
+    }
+    .field-error.visible { display: block; }
+
+    .form-divider { margin: 20px 0; }
+
+    /* Submit button */
+    .btn-submit {
+      width: 100%;
+      padding: 15px 28px;
+      font-size: 15px;
+      border-radius: var(--r-sm);
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(29,111,255,.3);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      margin-top: 24px;
+    }
+    .btn-submit:hover:not(:disabled) {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(29,111,255,.4);
+    }
+    .btn-submit:disabled {
+      opacity: 0.75;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Spinner */
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255,255,255,.3);
+      border-top-color: var(--white);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Inline form error */
+    .form-error-banner {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: var(--r-sm);
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #b91c1c;
+      margin-top: 16px;
+    }
+    .form-error-banner.visible { display: flex; }
+    .form-error-banner svg { flex-shrink: 0; width: 16px; height: 16px; }
+
+    /* Privacy note */
+    .privacy-note {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+    .privacy-note a { color: var(--blue); }
+
+    /* ============================================================
+       SUCCESS STATE
+    ============================================================ */
+    .success-state {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 16px 0;
+    }
+    .success-state.visible { display: flex; }
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(34,197,94,.1);
+      border: 2px solid rgba(34,197,94,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.5); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    .success-icon svg { width: 28px; height: 28px; color: var(--green); }
+    .success-state h3 {
+      font-size: 1.3rem;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .success-state p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 320px;
+    }
+    .success-sms-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-light);
+      border: 1px solid rgba(29,111,255,.15);
+      border-radius: 100px;
+      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-top: 20px;
+    }
+    .success-sms-badge svg { width: 14px; height: 14px; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--navy);
+      padding: 56px 0 32px;
+    }
+    .foot-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .foot-brand-col .nav-logo { margin-bottom: 14px; }
+    .foot-tagline {
+      font-size: 14px;
+      color: rgba(255,255,255,.45);
+      line-height: 1.65;
+      max-width: 260px;
+    }
+    .foot-col h4 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+      margin-bottom: 16px;
+    }
+    .foot-col ul { list-style: none; }
+    .foot-col li { margin-bottom: 10px; }
+    .foot-col a {
+      font-size: 14px;
+      color: rgba(255,255,255,.55);
+      transition: color 0.15s ease;
+    }
+    .foot-col a:hover { color: var(--white); }
+    .foot-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 28px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .foot-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,.3);
+    }
+    .foot-legal {
+      display: flex;
+      gap: 24px;
+    }
+    .foot-legal a {
+      font-size: 13px;
+      color: rgba(255,255,255,.35);
+      transition: color 0.15s ease;
+    }
+    .foot-legal a:hover { color: rgba(255,255,255,.7); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .contact-info { order: 2; }
+      .contact-card { order: 1; }
+      .foot-top { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .contact-card { padding: 28px 20px; }
+      .page-header { padding: 56px 0 52px; }
+      .foot-top { grid-template-columns: 1fr; gap: 32px; }
+      .foot-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV
+  ============================================================ -->
+  <nav id="mainNav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Wel<span>gent</span></a>
+        <ul class="nav-links">
+          <li><a href="index.html#how">How It Works</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#industries">Industries</a></li>
+          <li><a href="welgent-contact.html" class="active" style="color:var(--white);">Contact</a></li>
+          <li><a href="welgent-contact.html" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Book a Demo</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       PAGE HEADER
+  ============================================================ -->
+  <section class="page-header">
+    <div class="container">
+      <div class="page-header-label">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <circle cx="6" cy="6" r="4" fill="currentColor" opacity=".4"/>
+          <circle cx="6" cy="6" r="2" fill="currentColor"/>
+        </svg>
+        Let's Talk
+      </div>
+      <h1>Get in touch with Welgent</h1>
+      <p>Fill out the form and we'll send you an SMS to confirm — then get your demo scheduled.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: info -->
+        <div class="contact-info">
+          <h2>What happens after you submit?</h2>
+          <p>We keep it simple. No waiting on email. You'll hear from us by text within minutes.</p>
+
+          <ul class="contact-steps">
+            <li class="contact-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h16v12H2z"/><path d="M2 3l8 7 8-7"/>
+                </svg>
+              </div>
+              <div class="step-text">
+                <strong>You submit the form</strong>
+                <span>Takes under 60 seconds. No account needed.</span>
+              </div>
+            </li>
+            <li class="contact-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13.5c0 .3-.07.6-.2.87l-1.33 2.67A1 1 0 0115.6 18H4.4a1 1 0 01-.87-.96L2.2 14.37A2 2 0 012 13.5V4a2 2 0 012-2h12a2 2 0 012 2v9.5z"/>
+                </svg>
+              </div>
+              <div class="step-text">
+                <strong>You get an SMS within minutes</strong>
+                <span>A real confirmation sent straight to your phone.</span>
+              </div>
+            </li>
+            <li class="contact-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="14" height="13" rx="2"/><path d="M7 2v4M13 2v4M3 9h14"/>
+                </svg>
+              </div>
+              <div class="step-text">
+                <strong>We schedule your demo</strong>
+                <span>See Welgent live on your business use case.</span>
+              </div>
+            </li>
+            <li class="contact-step">
+              <div class="step-icon">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 10l4 4 7-7"/>
+                </svg>
+              </div>
+              <div class="step-text">
+                <strong>You're live in days, not weeks</strong>
+                <span>We handle setup. You handle your business.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: form card -->
+        <div class="contact-card" id="contactCard">
+          <iframe data-tally-src="https://tally.so/embed/jaBBY6?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="657" frameborder="0" marginheight="0" marginwidth="0" title="null"></iframe>
+          <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+        </div>
+        <!-- /contact-card -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="foot-top">
+        <div class="foot-brand-col">
+          <a href="index.html" class="nav-logo">Wel<span>gent</span></a>
+          <p class="foot-tagline">AI Sales Assistant that answers every call, qualifies leads, and books appointments automatically.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#how">How It Works</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#conversation">See a Demo</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="index.html#industries">Industries</a></li>
+            <li><a href="welgent-contact.html">Contact</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Get Started</h4>
+          <ul>
+            <li><a href="welgent-contact.html" class="btn btn-primary" style="font-size:14px;padding:10px 20px;display:inline-flex;margin-top:2px;">Book a Demo</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p class="foot-copy">© 2025 Welgent. All rights reserved.</p>
+        <nav class="foot-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+</html>
