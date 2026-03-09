@@ -331,6 +331,7 @@
       hideTyping();
       addMessage('wg-agent', data.reply || data.output || data.message || 'Message received!');
     } catch (err) {
+      console.error('Chat error:', err);
       hideTyping();
       const row = document.createElement('div');
       row.className = 'wg-msg-row wg-error';
@@ -358,5 +359,6 @@
 
   sendBtn.addEventListener('click', sendMessage);
 })();
+
 
 
