@@ -2,6 +2,8 @@
   // ─── Config ───────────────────────────────────────────────
   
   const WEBHOOK_URL = '/api/chat';
+  const GREETING    = "Hi there! I'm Alex, your booking assistant. How can I help you today — are you looking to schedule a service or do you have a question?";
+  const SESSION_ID  = crypto.randomUUID();
   
   // ─── Inject Fonts ─────────────────────────────────────────
   const fontLink = document.createElement('link');
@@ -356,4 +358,5 @@
 
   sendBtn.addEventListener('click', sendMessage);
 })();
+
 
