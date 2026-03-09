@@ -210,6 +210,7 @@
     @media (max-width: 480px) {
       #wg-panel { bottom: 0; right: 0; left: 0; width: 100%; height: 100dvh; border-radius: 0; }
       #wg-trigger { bottom: 20px; right: 20px; }
+      #wg-trigger.wg-open { display: none; }
     }
   `;
   document.head.appendChild(style);
