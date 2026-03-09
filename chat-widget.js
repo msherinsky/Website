@@ -3,6 +3,7 @@
   const WEBHOOK_URL = 'https://n8n.srv1182139.hstgr.cloud/webhook/86f5031d-e6d7-4550-8282-6c9cc0a1c2b2';
   const GREETING    = "Hi there! I'm Alex, your booking assistant. How can I help you today — are you looking to schedule a service or do you have a question?";
   const SESSION_ID  = crypto.randomUUID();
+  const API_TOKEN   = 'wg-secret-2024-abc123';
 
   // ─── Inject Fonts ─────────────────────────────────────────
   const fontLink = document.createElement('link');
@@ -322,7 +323,7 @@
     try {
       const res = await fetch(WEBHOOK_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'x-api-token': API_TOKEN },
         body: JSON.stringify({ chatInput: text, sessionId: SESSION_ID }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
