@@ -1,10 +1,8 @@
 (() => {
   // ─── Config ───────────────────────────────────────────────
-  const WEBHOOK_URL = 'https://n8n.srv1182139.hstgr.cloud/webhook/86f5031d-e6d7-4550-8282-6c9cc0a1c2b2';
-  const GREETING    = "Hi there! I'm Alex, your booking assistant. How can I help you today — are you looking to schedule a service or do you have a question?";
-  const SESSION_ID  = crypto.randomUUID();
-  const API_TOKEN   = 'wg-secret-2024-abc123';
-
+  
+  const WEBHOOK_URL = '/api/chat';
+  
   // ─── Inject Fonts ─────────────────────────────────────────
   const fontLink = document.createElement('link');
   fontLink.rel  = 'stylesheet';
@@ -358,3 +356,4 @@
 
   sendBtn.addEventListener('click', sendMessage);
 })();
+
