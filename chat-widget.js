@@ -1,10 +1,9 @@
 (() => {
   // ─── Config ───────────────────────────────────────────────
-  
   const WEBHOOK_URL = '/api/chat';
   const GREETING    = "Hi there! I'm Alex, your booking assistant. How can I help you today — are you looking to schedule a service or do you have a question?";
   const SESSION_ID  = crypto.randomUUID();
-  
+
   // ─── Inject Fonts ─────────────────────────────────────────
   const fontLink = document.createElement('link');
   fontLink.rel  = 'stylesheet';
@@ -289,7 +288,10 @@
     row.className = `wg-msg-row ${role}`;
     const bubble = document.createElement('div');
     bubble.className = 'wg-bubble';
-    bubble.textContent = text;
+    text.split('\n').forEach((line, i) => {
+      if (i > 0) bubble.appendChild(document.createElement('br'));
+      bubble.appendChild(document.createTextNode(line));
+    });
     row.appendChild(bubble);
     messages.appendChild(row);
     scrollBottom();
@@ -331,7 +333,6 @@
       hideTyping();
       addMessage('wg-agent', data.reply || data.output || data.message || 'Message received!');
     } catch (err) {
-      console.error('Chat error:', err);
       hideTyping();
       const row = document.createElement('div');
       row.className = 'wg-msg-row wg-error';
@@ -359,7 +360,3 @@
 
   sendBtn.addEventListener('click', sendMessage);
 })();
-
-
-
-
