@@ -323,7 +323,7 @@
     try {
       const res = await fetch(WEBHOOK_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-api-token': API_TOKEN },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ chatInput: text, sessionId: SESSION_ID }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -359,6 +359,7 @@
 
   sendBtn.addEventListener('click', sendMessage);
 })();
+
 
 
 
