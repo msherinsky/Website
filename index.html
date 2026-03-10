@@ -1915,6 +1915,16 @@
     document.querySelectorAll('[data-book]').forEach(el => {
       el.addEventListener('click', e => { e.preventDefault(); openBookingModal(); });
     });
+
+    Cal("on", {
+      action: "bookingSuccessful",
+      callback: () => {
+        const container = document.getElementById('cal-inline-container');
+        const currentHeight = container.offsetHeight;
+        container.style.height = currentHeight + 'px';
+        container.style.overflow = 'hidden';
+      }
+    });
   </script>
   <script src="chat-widget.js"></script>
 </body>
