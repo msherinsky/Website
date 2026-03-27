@@ -1,11 +1,14 @@
 (() => {
   // ─── Config ───────────────────────────────────────────────
-  const script      = document.currentScript;
-  const CLIENT_ID   = script.dataset.client;
-  const WEBHOOK_URL = '/api/chat';
-  const GREETING    = script.dataset.greeting || "Hi! How can I help you today?";
-  const AGENT_NAME  = script.dataset.name || "Alex";
-  const SESSION_ID  = crypto.randomUUID();
+  const script        = document.currentScript;
+  const CLIENT_ID     = script.dataset.client;
+  const WEBHOOK_URL   = '/api/chat';
+  const GREETING      = script.dataset.greeting || "Hi! How can I help you today?";
+  const AGENT_NAME    = script.dataset.name || "Alex";
+  const COLOR_PRIMARY = script.dataset.colorPrimary || '#1D6FFF';
+  const COLOR_DARK    = script.dataset.colorDark    || '#1558D6';
+  const COLOR_HEADER  = script.dataset.colorHeader  || '#060F22';
+  const SESSION_ID    = crypto.randomUUID();
 
   // ─── Inject Fonts ─────────────────────────────────────────
   const fontLink = document.createElement('link');
@@ -17,9 +20,9 @@
   const style = document.createElement('style');
   style.textContent = `
     :root {
-      --wg-navy:       #060F22;
-      --wg-blue:       #1D6FFF;
-      --wg-blue-dark:  #1558D6;
+      --wg-navy:       ${COLOR_HEADER};
+      --wg-blue:       ${COLOR_PRIMARY};
+      --wg-blue-dark:  ${COLOR_DARK};
       --wg-blue-mid:   #4B8BF5;
       --wg-teal:       #00C9B1;
       --wg-green:      #22C55E;
