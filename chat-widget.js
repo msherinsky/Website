@@ -5,6 +5,7 @@
   const WEBHOOK_URL   = '/api/chat';
   const GREETING      = script.dataset.greeting || "Hi! How can I help you today?";
   const AGENT_NAME    = script.dataset.name || "Alex";
+  const SUBTITLE      = script.dataset.subtitle     || 'AI Assistant';
   const COLOR_PRIMARY = script.dataset.colorPrimary || '#1D6FFF';
   const COLOR_DARK    = script.dataset.colorDark    || '#1558D6';
   const COLOR_HEADER  = script.dataset.colorHeader  || '#060F22';
@@ -233,7 +234,7 @@
         <div class="wg-avatar">A<span class="wg-online-dot"></span></div>
         <div class="wg-header-info">
           <div class="wg-header-name">${AGENT_NAME}</div>
-          <div class="wg-header-sub">Welgent Booking Assistant</div>
+          <div class="wg-header-sub">${SUBTITLE}</div>
         </div>
         <button class="wg-close-btn" id="wg-close" aria-label="Close chat">
           <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
