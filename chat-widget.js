@@ -8,8 +8,9 @@
   const SUBTITLE      = script.dataset.subtitle     || 'AI Assistant';
   const COLOR_PRIMARY = script.dataset.colorPrimary || '#1D6FFF';
   const COLOR_DARK    = script.dataset.colorDark    || '#1558D6';
-  const COLOR_HEADER  = script.dataset.colorHeader  || '#060F22';
-  const SESSION_ID    = crypto.randomUUID();
+  const COLOR_HEADER    = script.dataset.colorHeader  || '#060F22';
+  const AUTO_OPEN_DELAY = script.dataset.autoOpen ? parseInt(script.dataset.autoOpen, 10) : null;
+  const SESSION_ID      = crypto.randomUUID();
 
   // ─── Inject Fonts ─────────────────────────────────────────
   const fontLink = document.createElement('link');
@@ -367,4 +368,8 @@
   });
 
   sendBtn.addEventListener('click', sendMessage);
+
+  if (AUTO_OPEN_DELAY !== null) {
+    setTimeout(openPanel, AUTO_OPEN_DELAY * 1000);
+  }
 })();
