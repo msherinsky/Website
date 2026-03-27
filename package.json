@@ -1,0 +1,24 @@
+{
+  "name": "claude",
+  "version": "1.0.0",
+  "description": "**Workflows, Agents, Tools** - A reliable architecture for AI-powered automation that separates probabilistic reasoning from deterministic execution.",
+  "main": "chat-widget.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msherinsky/Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/msherinsky/Website/issues"
+  },
+  "homepage": "https://github.com/msherinsky/Website#readme",
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}
