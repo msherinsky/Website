@@ -1,7 +1,9 @@
 (() => {
   // ─── Config ───────────────────────────────────────────────
-  const WEBHOOK_URL = '/api/chat';
-  const GREETING    = "Hi there! I'm Alex, your booking assistant. How can I help you today — are you looking to schedule a service or do you have a question?";
+  const script      = document.currentScript;
+  const WEBHOOK_URL = script.dataset.webhook;
+  const GREETING    = script.dataset.greeting || "Hi! How can I help you today?";
+  const AGENT_NAME  = script.dataset.name || "Alex";
   const SESSION_ID  = crypto.randomUUID();
 
   // ─── Inject Fonts ─────────────────────────────────────────
@@ -226,7 +228,7 @@
       <div class="wg-header">
         <div class="wg-avatar">A<span class="wg-online-dot"></span></div>
         <div class="wg-header-info">
-          <div class="wg-header-name">Alex</div>
+          <div class="wg-header-name">${AGENT_NAME}</div>
           <div class="wg-header-sub">Welgent Booking Assistant</div>
         </div>
         <button class="wg-close-btn" id="wg-close" aria-label="Close chat">
