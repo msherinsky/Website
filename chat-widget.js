@@ -1,7 +1,8 @@
 (() => {
   // ─── Config ───────────────────────────────────────────────
   const script      = document.currentScript;
-  const WEBHOOK_URL = script.dataset.webhook;
+  const CLIENT_ID   = script.dataset.client;
+  const WEBHOOK_URL = '/api/chat';
   const GREETING    = script.dataset.greeting || "Hi! How can I help you today?";
   const AGENT_NAME  = script.dataset.name || "Alex";
   const SESSION_ID  = crypto.randomUUID();
@@ -329,7 +330,7 @@
       const res = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chatInput: text, sessionId: SESSION_ID }),
+        body: JSON.stringify({ chatInput: text, sessionId: SESSION_ID, clientId: CLIENT_ID }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();

@@ -4,26 +4,25 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { chatInput, sessionId } = req.body || {};
+  const { chatInput, sessionId, clientId } = req.body || {};
 
-  if (!chatInput || !sessionId) {
-    return res.status(400).json({ error: 'Missing chatInput or sessionId' });
+  if (!chatInput || !sessionId || !clientId) {
+    return res.status(400).json({ error: 'Missing chatInput, sessionId, or clientId' });
   }
 
-  const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL;
-  const N8N_API_TOKEN   = process.env.N8N_API_TOKEN;
+  // Look up the webhook URL for this client from env vars
+  // e.g. clientId "jess-bootcamp" maps to N8N_WEBHOOK_JESS_BOOTCAMP
+  const envKey = 'N8N_WEBHOOK_' + clientId.toUpperCase().replace(/-/g, '_');
+  const N8N_WEBHOOK_URL = process.env[envKey];
 
-  if (!N8N_WEBHOOK_URL || !N8N_API_TOKEN) {
-    return res.status(500).json({ error: 'Server misconfigured' });
+  if (!N8N_WEBHOOK_URL) {
+    return res.status(400).json({ error: 'Unknown client' });
   }
 
   try {
     const upstream = await fetch(N8N_WEBHOOK_URL, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-token': N8N_API_TOKEN,
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ chatInput, sessionId }),
     });
 
