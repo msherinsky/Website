@@ -370,6 +370,6 @@
   sendBtn.addEventListener('click', sendMessage);
 
   if (AUTO_OPEN_DELAY !== null) {
-    setTimeout(openPanel, AUTO_OPEN_DELAY * 1000);
+    setTimeout(openPanel, AUTO_OPEN_DELAY);
   }
 })();
