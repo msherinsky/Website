@@ -855,6 +855,7 @@
       .value-inner { grid-template-columns: 1fr; gap: 48px; }
       .val-stats { max-width: 460px; }
       .calc-layout { grid-template-columns: 1fr; }
+      .calc-layout > * { min-width: 0; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
@@ -892,7 +893,7 @@
       .wc-field-label { flex-wrap: wrap; gap: 8px; }
       .wc-input { padding: 12px 14px; font-size: 1.2rem; }
       .wc-prefix { padding: 0 12px; }
-      .wc-suffix { padding: 0 10px; font-size: 11px; }
+      .wc-suffix { display: none; }
     }
 
     @media (max-width: 480px) {

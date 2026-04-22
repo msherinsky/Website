@@ -369,7 +369,7 @@
 
   sendBtn.addEventListener('click', sendMessage);
 
-  if (AUTO_OPEN_DELAY !== null) {
+  if (AUTO_OPEN_DELAY !== null && window.innerWidth > 768) {
     setTimeout(openPanel, AUTO_OPEN_DELAY);
   }
 })();
