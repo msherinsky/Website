@@ -841,8 +841,8 @@
       .calc-result-card {
         position: absolute; inset: 0;
         border-radius: 0; box-shadow: none;
-        padding: 72px 32px 48px;
-        display: flex; flex-direction: column; justify-content: flex-start;
+        padding: 80px 28px 44px;
+        display: flex; flex-direction: column; justify-content: center;
         z-index: 0; order: unset;
         overflow-y: auto; -webkit-overflow-scrolling: touch;
         opacity: 0;
@@ -851,6 +851,14 @@
         transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.34,1.1,0.64,1);
       }
       .calc-result-card.wc-revealed { z-index: 2; opacity: 1; transform: none; pointer-events: all; }
+      /* Tighten result card spacing for mobile */
+      .calc-result-pill { margin-bottom: 10px; }
+      .calc-monthly-sub { margin-bottom: 18px; }
+      .calc-divider { margin-bottom: 14px; }
+      .calc-secondary-row { margin-bottom: 16px; }
+      .calc-roi-note { padding: 10px 14px; }
+      .wc-demo-btn { margin-top: 14px; }
+      .wc-change-link { margin-top: 10px; }
       .wc-reveal-btn { display: flex; }
       .wc-panel-title { display: block; }
       .wc-change-link { display: flex; }
