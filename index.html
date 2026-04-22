@@ -1309,6 +1309,48 @@
     @media (min-width: 901px) {
       .wc-reveal-btn { display: none; }
     }
+
+    /* ============================================================
+       PROBLEM SECTION — INDUSTRIES SUBLINE
+    ============================================================ */
+    .problem-industries {
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* ============================================================
+       MID-PAGE CTA STRIP
+    ============================================================ */
+    .cta-strip {
+      background: var(--navy);
+      padding: 80px 0;
+    }
+    .cta-strip-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      text-align: center;
+    }
+    .cta-strip-inner h2 {
+      color: var(--white);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      max-width: 560px;
+      margin: 0;
+    }
+
+    /* ============================================================
+       FOOTER BOOK BUTTON
+    ============================================================ */
+    .foot-book-btn {
+      display: inline-flex;
+      margin-top: 18px;
+      font-size: 14px;
+      padding: 11px 22px;
+    }
   </style>
 </head>
 <body>
@@ -1354,7 +1396,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>
     <a href="#how" onclick="closeMobile()">How It Works</a>
-    <a href="#industries" onclick="closeMobile()">Industries</a>
+    <a href="#how" onclick="closeMobile()">How It Works</a>
     <a href="#" class="btn btn-primary" onclick="closeMobile()" style="font-size:17px;padding:15px 32px;margin-top:8px;" data-book>Book a Demo</a>
   </div>
 
@@ -1365,7 +1407,7 @@
         <a href="#" class="nav-logo">Wel<span>gent</span></a>
         <ul class="nav-links">
           <li><a href="#how">How It Works</a></li>
-          <li><a href="#industries">Industries</a></li>
+          <li><a href="#conversation">See It In Action</a></li>
           <li><a href="#" class="btn btn-primary" style="padding:10px 20px;font-size:14px;" data-book>Book a Demo</a></li>
         </ul>
         <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -1494,6 +1536,7 @@
         <div class="label">The Problem</div>
         <h2>Businesses Lose Customers Every Day Because They Miss Calls</h2>
         <p>Most service businesses can&#8217;t be on the phone every minute. When someone calls and nobody answers, they don&#8217;t wait &mdash; they move on to whoever picks up first.</p>
+        <p class="problem-industries">HVAC &middot; Roofing &middot; Dental &middot; Fitness &middot; Junk Removal &middot; and more</p>
       </div>
       <div class="problem-grid">
         <div class="prob-card reveal d1">
@@ -1560,43 +1603,49 @@
     </div>
   </section>
 
-  <!-- MULTI-CHANNEL -->
-  <section id="channels">
+  <!-- VALUE -->
+  <section id="value">
     <div class="container">
-      <div class="split">
-        <div class="split-text reveal">
-          <div class="label">Multi-Channel</div>
-          <h2>Talk to Your Customers Anywhere</h2>
-          <p>Welgent doesn&#8217;t only answer phone calls. It can also chat with visitors directly on your website.</p>
-          <p>When someone prefers messaging, the chat widget delivers the same natural conversation &mdash; handled automatically, any time of day.</p>
+      <div class="value-inner">
+        <div class="val-text reveal">
+          <div class="label label--light">The ROI</div>
+          <h2>More Revenue From the Calls You&#8217;re Already Getting</h2>
+          <p>Welgent doesn&#8217;t generate more leads &mdash; it captures the ones already calling you. Every inbound call gets answered, qualified, and pushed toward a booking. Your calendar fills from traffic you were already paying for.</p>
+          <div class="val-benefits">
+            <div class="val-ben">
+              <div class="val-ben-icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4B8BF5" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Higher booking rate from the same call volume
+            </div>
+            <div class="val-ben">
+              <div class="val-ben-icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4B8BF5" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Zero hold time &mdash; customers get answers instantly
+            </div>
+            <div class="val-ben">
+              <div class="val-ben-icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4B8BF5" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Handles any call volume without adding staff
+            </div>
+            <div class="val-ben">
+              <div class="val-ben-icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4B8BF5" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Consistent experience on every single call
+            </div>
+          </div>
         </div>
-        <div class="channel-cards">
-          <div class="ch-card reveal d1">
-            <div class="ch-icon ch-icon-blue">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D6FFF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.62 3.44 2 2 0 013.6 1.26h3a2 2 0 012 1.72c.128.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.96a16 16 0 006.13 6.13l.86-.86a2 2 0 012.11-.45c.907.339 1.85.572 2.81.7A2 2 0 0122 16.92z"/></svg>
-            </div>
-            <div>
-              <h4>Phone Calls</h4>
-              <p>Handles inbound calls with natural conversation &mdash; understands context, answers service questions, and guides callers to a booking.</p>
-            </div>
+        <div class="val-stats reveal d2">
+          <div class="val-stat">
+            <div class="val-num">100<em>%</em></div>
+            <div class="val-lbl">Of calls answered, day or night</div>
           </div>
-          <div class="ch-card reveal d2">
-            <div class="ch-icon ch-icon-teal">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C9B1" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            </div>
-            <div>
-              <h4>Website Chat</h4>
-              <p>A chat widget on your site lets visitors get immediate answers &mdash; the same AI, the same natural experience.</p>
-            </div>
+          <div class="val-stat">
+            <div class="val-num">0<em>s</em></div>
+            <div class="val-lbl">Wait time before the AI responds</div>
           </div>
-          <div class="ch-card reveal d3">
-            <div class="ch-icon ch-icon-indigo">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            </div>
-            <div>
-              <h4>Follow-Ups</h4>
-              <p>After every interaction, your AI sends personalized follow-up messages to leads who haven&#8217;t booked &mdash; at the right moment, every time.</p>
-            </div>
+          <div class="val-stat">
+            <div class="val-num">24<em>/7</em></div>
+            <div class="val-lbl">Always on &mdash; weekends, holidays, nights</div>
+          </div>
+          <div class="val-stat">
+            <div class="val-num" style="font-size:2rem;letter-spacing:-0.02em;">Unlimited</div>
+            <div class="val-lbl">Simultaneous conversations handled</div>
           </div>
         </div>
       </div>
@@ -1655,84 +1704,15 @@
     </div>
   </section>
 
-  <!-- INDUSTRIES -->
-  <section id="industries">
+  <!-- MID-PAGE CTA STRIP -->
+  <section class="cta-strip">
     <div class="container">
-      <div class="ind-head reveal">
-        <div class="label">Industries</div>
-        <h2>Built For Businesses That Depend on Phone Calls</h2>
-        <p>If your business runs on phone calls and new leads, Welgent was built for you.</p>
-      </div>
-      <div class="ind-grid">
-        <div class="ind-card reveal d1">
-          <span class="ind-emoji" aria-hidden="true">&#x1F527;</span>
-          <h3>Home Services</h3>
-          <p>HVAC, plumbing, roofing, electrical, pest control, landscaping</p>
-        </div>
-        <div class="ind-card reveal d2">
-          <span class="ind-emoji" aria-hidden="true">&#x1F3E5;</span>
-          <h3>Health &amp; Wellness</h3>
-          <p>Therapists, dentists, chiropractors, med spas, physical therapy</p>
-        </div>
-        <div class="ind-card reveal d3">
-          <span class="ind-emoji" aria-hidden="true">&#x1F4AA;</span>
-          <h3>Fitness</h3>
-          <p>Gyms, pilates studios, martial arts schools, personal training</p>
-        </div>
-        <div class="ind-card reveal d4">
-          <span class="ind-emoji" aria-hidden="true">&#x1F4BC;</span>
-          <h3>Professional Services</h3>
-          <p>Law firms, insurance agencies, real estate offices, accounting</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VALUE -->
-  <section id="value">
-    <div class="container">
-      <div class="value-inner">
-        <div class="val-text reveal">
-          <div class="label label--light">The ROI</div>
-          <h2>More Revenue From the Calls You&#8217;re Already Getting</h2>
-          <p>Welgent doesn&#8217;t generate more leads &mdash; it captures the ones already calling you. Every inbound call gets answered, qualified, and pushed toward a booking. Your calendar fills from traffic you were already paying for.</p>
-          <div class="val-benefits">
-            <div class="val-ben">
-              <div class="val-ben-icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4B8BF5" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              Higher booking rate from the same call volume
-            </div>
-            <div class="val-ben">
-              <div class="val-ben-icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4B8BF5" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              Zero hold time &mdash; customers get answers instantly
-            </div>
-            <div class="val-ben">
-              <div class="val-ben-icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4B8BF5" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              Handles any call volume without adding staff
-            </div>
-            <div class="val-ben">
-              <div class="val-ben-icon" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4B8BF5" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-              Consistent experience on every single call
-            </div>
-          </div>
-        </div>
-        <div class="val-stats reveal d2">
-          <div class="val-stat">
-            <div class="val-num">100<em>%</em></div>
-            <div class="val-lbl">Of calls answered, day or night</div>
-          </div>
-          <div class="val-stat">
-            <div class="val-num">0<em>s</em></div>
-            <div class="val-lbl">Wait time before the AI responds</div>
-          </div>
-          <div class="val-stat">
-            <div class="val-num">24<em>/7</em></div>
-            <div class="val-lbl">Always on &mdash; weekends, holidays, nights</div>
-          </div>
-          <div class="val-stat">
-            <div class="val-num" style="font-size:2rem;letter-spacing:-0.02em;">Unlimited</div>
-            <div class="val-lbl">Simultaneous conversations handled</div>
-          </div>
-        </div>
+      <div class="cta-strip-inner">
+        <h2>Sounds like something your business needs?</h2>
+        <a href="#" class="btn btn-primary" data-book>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book a Demo
+        </a>
       </div>
     </div>
   </section>
@@ -1833,6 +1813,7 @@
         <div>
           <span class="foot-logo">Wel<span>gent</span></span>
           <p class="foot-tag">Conversational AI that turns calls into customers.</p>
+          <a href="#" class="btn btn-primary foot-book-btn" data-book>Book a Demo</a>
         </div>
         <div>
           <div class="foot-col-title">Product</div>
@@ -1846,7 +1827,7 @@
           <div class="foot-col-title">Company</div>
           <ul class="foot-col-links">
             <li><a href="#">About</a></li>
-            <li><a href="#industries">Industries</a></li>
+            <li><a href="#how">How It Works</a></li>
             <li><a href="welgent-contact.html">Contact</a></li>
             <li><a href="#">Blog</a></li>
           </ul>
