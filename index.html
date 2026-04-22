@@ -825,7 +825,7 @@
       #calculator { padding: 0; border: none; }
       #calculator .container { padding: 0; max-width: none; }
       .calc-header { display: none; }
-      .calc-layout { display: block; position: relative; min-height: 100svh; overflow: hidden; }
+      .calc-layout { display: block; position: relative; min-height: 100svh; overflow: hidden; background: var(--off-white); }
       .calc-fields-col {
         position: absolute; inset: 0;
         display: flex; flex-direction: column; justify-content: flex-start;
@@ -839,18 +839,23 @@
         opacity: 0; transform: translateY(-40px); pointer-events: none; z-index: 0;
       }
       .calc-result-card {
-        position: absolute; inset: 0;
-        border-radius: 0; box-shadow: none;
-        padding: 80px 28px 44px;
-        display: flex; flex-direction: column; justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: calc(100% - 32px);
+        max-height: 85svh;
+        border-radius: 20px;
+        box-shadow: 0 24px 64px rgba(6,15,34,.35), 0 8px 24px rgba(6,15,34,.2);
+        padding: 32px 24px 28px;
+        display: flex; flex-direction: column; justify-content: flex-start;
         z-index: 0; order: unset;
         overflow-y: auto; -webkit-overflow-scrolling: touch;
         opacity: 0;
-        transform: translateY(24px);
+        transform: translate(-50%, calc(-50% + 24px));
         pointer-events: none;
         transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.34,1.1,0.64,1);
       }
-      .calc-result-card.wc-revealed { z-index: 2; opacity: 1; transform: none; pointer-events: all; }
+      .calc-result-card.wc-revealed { z-index: 2; opacity: 1; transform: translate(-50%, -50%); pointer-events: all; }
       /* Tighten result card spacing for mobile */
       .calc-result-pill { margin-bottom: 10px; }
       .calc-monthly-sub { margin-bottom: 18px; }
