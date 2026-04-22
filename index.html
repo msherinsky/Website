@@ -854,17 +854,10 @@
       .ind-grid { grid-template-columns: 1fr 1fr; }
       .value-inner { grid-template-columns: 1fr; gap: 48px; }
       .val-stats { max-width: 460px; }
-      .calc-layout { display: flex; flex-direction: column; gap: 20px; }
+      .calc-layout { grid-template-columns: 1fr; }
       .calc-layout > * { min-width: 0; }
-      .calc-result-card { order: 1; position: sticky; top: 60px; z-index: 50; padding: 18px 22px; }
-      .calc-fields-col { order: 2; }
-      .calc-result-pill { display: none; }
-      .calc-monthly-sub { display: none; }
-      .calc-divider { display: none; }
-      .calc-roi-note { display: none; }
-      .calc-main-label { margin-bottom: 4px; }
-      .calc-monthly-num { font-size: 2.4rem; margin-bottom: 10px; }
-      .calc-secondary-row { margin-bottom: 0; gap: 24px; }
+      .calc-result-card { order: unset; }
+      .calc-fields-col { order: unset; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
@@ -876,7 +869,6 @@
     @media (max-width: 640px) {
       #hero { padding: 100px 0 56px; }
       #problem, #how, #channels, #conversation, #industries, #value, #calculator { padding: 70px 0; }
-      #cta-final { padding: 80px 0; }
       .steps-grid { grid-template-columns: 1fr; }
       .ind-grid { grid-template-columns: 1fr; }
       .val-stats { grid-template-columns: 1fr; }
@@ -894,9 +886,9 @@
       .how-head { margin-bottom: 48px; }
       .hero-sub { font-size: 16px; }
       /* Calculator mobile */
-      #calculator { padding: 50px 0; }
-      .calc-result-card { padding: 14px 18px; }
-      .calc-monthly-num { font-size: 2rem; }
+      #calculator { padding: 60px 0; }
+      .calc-result-card { padding: 28px 20px; }
+      .calc-monthly-num { font-size: 2.2rem; }
       .calc-secondary-row { gap: 16px; }
       .calc-fields { gap: 16px; }
       .wc-toggle-btn { padding: 4px 9px; font-size: 11px; }
@@ -905,6 +897,7 @@
       .wc-input { padding: 12px 14px; font-size: 1.2rem; }
       .wc-prefix { padding: 0 12px; }
       .wc-suffix { display: none; }
+      .wc-reveal-btn { font-size: 15px; padding: 14px 22px; }
     }
 
     @media (max-width: 480px) {
@@ -914,8 +907,9 @@
       .channel-cards { gap: 10px; }
       .ch-card { padding: 18px 16px; }
       .ind-card { padding: 22px 18px; }
-      .calc-secondary-num { font-size: 1.2rem; }
-      .calc-secondary-row { gap: 10px; }
+      .calc-monthly-num { font-size: 2rem; }
+      .calc-secondary-num { font-size: 1.3rem; }
+      .calc-secondary-row { gap: 12px; }
     }
 
     /* ============================================================
@@ -1167,6 +1161,43 @@
       box-shadow: var(--shadow-lg);
       position: relative;
       overflow: hidden;
+      opacity: 0;
+      transform: translateY(24px);
+      pointer-events: none;
+      transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.34,1.1,0.64,1);
+    }
+    .calc-result-card.wc-revealed {
+      opacity: 1;
+      transform: none;
+      pointer-events: all;
+    }
+    .wc-reveal-btn {
+      width: 100%;
+      margin-top: 24px;
+      font-size: 16px;
+      padding: 15px 28px;
+      justify-content: center;
+    }
+    .wc-demo-btn {
+      display: flex;
+      width: 100%;
+      margin-top: 24px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 20px;
+      border-radius: var(--r-sm);
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 16px rgba(29,111,255,.3);
+      transition: background .2s, transform .2s, box-shadow .2s;
+    }
+    .wc-demo-btn:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(29,111,255,.4);
     }
     .calc-result-card::before {
       content: '';
@@ -1684,42 +1715,17 @@
     </div>
   </section>
 
-  <!-- REVENUE CALCULATOR -->
+  <!-- REVENUE CALCULATOR / FINAL CTA -->
   <section id="calculator">
     <div class="container">
       <div class="calc-header reveal">
         <div class="label">Your Numbers</div>
         <h2>See What Missed Calls Are Costing You</h2>
-        <p>Plug in your numbers and watch the real cost of missed calls appear in real time.</p>
+        <p>Put in your numbers. See exactly what you&rsquo;re losing. Then let&rsquo;s fix it.</p>
       </div>
       <div class="calc-layout">
 
-        <!-- Result card: first in DOM so it's on top on mobile -->
-        <div class="calc-result-card reveal">
-          <div class="calc-result-pill">
-            <span class="calc-result-pill-dot"></span>
-            Live Estimate
-          </div>
-          <div class="calc-main-label">Monthly Revenue Lost</div>
-          <div class="calc-monthly-num" id="wc-monthly">$31,500</div>
-          <div class="calc-monthly-sub" id="wc-formula">3 calls × $350 × 30% × 30 days</div>
-          <div class="calc-divider"></div>
-          <div class="calc-secondary-row">
-            <div class="calc-secondary-item">
-              <div class="calc-secondary-label">Annual Loss</div>
-              <div class="calc-secondary-num" id="wc-annual">$378,000</div>
-            </div>
-            <div class="calc-secondary-item">
-              <div class="calc-secondary-label">Jobs Missed / Mo</div>
-              <div class="calc-secondary-num" id="wc-jobs">27 jobs</div>
-            </div>
-          </div>
-          <div class="calc-roi-note" id="wc-roi-note">
-            If Welgent recovers just <strong id="wc-breakeven">2 jobs</strong> a month, it more than pays for itself — everything else is revenue you weren't capturing.
-          </div>
-        </div>
-
-        <!-- Inputs -->
+        <!-- Inputs: first in DOM = top on mobile, left on desktop via CSS order -->
         <div class="calc-fields-col reveal d2">
           <div class="calc-fields">
             <div>
@@ -1751,28 +1757,41 @@
             </div>
             <p class="calc-footnote">Calculated on a 30-day month. Based on calls that ring through but go unanswered.</p>
           </div>
+          <button id="wc-reveal-btn" class="btn btn-primary wc-reveal-btn">
+            Show My Numbers
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section id="cta-final">
-    <div class="container">
-      <div class="cta-inner reveal">
-        <div class="label label--light" style="justify-content:center;">Get Started Today</div>
-        <h2>Never Miss Another Customer</h2>
-        <p>Every call answered. Every lead followed up. Every appointment booked &mdash; without lifting a finger.</p>
-        <div class="cta-btns">
-          <a href="#" class="btn btn-primary" style="font-size:16px;padding:16px 36px;" data-book>
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Book a Demo
-          </a>
-          <a href="#how" class="btn btn-ghost" style="font-size:16px;padding:16px 36px;">
-            See How It Works
+        <!-- Result card: second in DOM = below inputs on mobile, right on desktop -->
+        <div class="calc-result-card">
+          <div class="calc-result-pill">
+            <span class="calc-result-pill-dot"></span>
+            Your Estimate
+          </div>
+          <div class="calc-main-label">Monthly Revenue Lost</div>
+          <div class="calc-monthly-num" id="wc-monthly">$0</div>
+          <div class="calc-monthly-sub" id="wc-formula">&nbsp;</div>
+          <div class="calc-divider"></div>
+          <div class="calc-secondary-row">
+            <div class="calc-secondary-item">
+              <div class="calc-secondary-label">Annual Loss</div>
+              <div class="calc-secondary-num" id="wc-annual">$0</div>
+            </div>
+            <div class="calc-secondary-item">
+              <div class="calc-secondary-label">Jobs Missed / Mo</div>
+              <div class="calc-secondary-num" id="wc-jobs">0 jobs</div>
+            </div>
+          </div>
+          <div class="calc-roi-note" id="wc-roi-note">
+            If Welgent recovers just <strong id="wc-breakeven">2 jobs</strong> a month, it more than pays for itself &mdash; everything else is revenue you weren&rsquo;t capturing.
+          </div>
+          <a href="#" class="btn wc-demo-btn" data-book>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book a Demo &mdash; Recover This Revenue
           </a>
         </div>
+
       </div>
     </div>
   </section>
@@ -1970,11 +1989,19 @@
           breakeven + (breakeven === 1 ? ' job' : ' jobs');
       }
 
+      const resultCard = document.querySelector('.calc-result-card');
+
+      document.getElementById('wc-reveal-btn').addEventListener('click', () => {
+        wcCalc();
+        resultCard.classList.add('wc-revealed');
+        if (window.innerWidth <= 900) {
+          setTimeout(() => resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+        }
+      });
+
       ['wc-job-value', 'wc-missed', 'wc-conv'].forEach(id => {
         document.getElementById(id).addEventListener('input', wcCalc);
       });
-
-      wcCalc();
     })();
   </script>
 
