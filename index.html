@@ -854,9 +854,17 @@
       .ind-grid { grid-template-columns: 1fr 1fr; }
       .value-inner { grid-template-columns: 1fr; gap: 48px; }
       .val-stats { max-width: 460px; }
-      .calc-layout { grid-template-columns: 1fr; gap: 28px; }
+      .calc-layout { display: flex; flex-direction: column; gap: 20px; }
       .calc-layout > * { min-width: 0; }
-      .calc-result-card { order: -1; }
+      .calc-result-card { order: 1; position: sticky; top: 60px; z-index: 50; padding: 18px 22px; }
+      .calc-fields-col { order: 2; }
+      .calc-result-pill { display: none; }
+      .calc-monthly-sub { display: none; }
+      .calc-divider { display: none; }
+      .calc-roi-note { display: none; }
+      .calc-main-label { margin-bottom: 4px; }
+      .calc-monthly-num { font-size: 2.4rem; margin-bottom: 10px; }
+      .calc-secondary-row { margin-bottom: 0; gap: 24px; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
@@ -886,14 +894,10 @@
       .how-head { margin-bottom: 48px; }
       .hero-sub { font-size: 16px; }
       /* Calculator mobile */
-      #calculator { padding: 56px 0; }
-      .calc-result-card { padding: 28px 20px; }
-      .calc-result-pill { margin-bottom: 12px; }
-      .calc-monthly-num { font-size: 2.6rem; }
-      .calc-monthly-sub { font-size: 12px; word-break: break-word; margin-bottom: 16px; }
-      .calc-divider { margin-bottom: 16px; }
-      .calc-secondary-row { margin-bottom: 16px; }
-      .calc-roi-note { display: none; }
+      #calculator { padding: 50px 0; }
+      .calc-result-card { padding: 14px 18px; }
+      .calc-monthly-num { font-size: 2rem; }
+      .calc-secondary-row { gap: 16px; }
       .calc-fields { gap: 16px; }
       .wc-toggle-btn { padding: 4px 9px; font-size: 11px; }
       .calc-header { margin-bottom: 24px; }
@@ -907,14 +911,11 @@
       .hero-visual { display: none; }
       .hero-inner { grid-template-columns: 1fr; }
       .hero-h1 { font-size: 2.2rem; }
-      .calc-secondary-row { gap: 12px; }
       .channel-cards { gap: 10px; }
       .ch-card { padding: 18px 16px; }
       .ind-card { padding: 22px 18px; }
-      /* Tighten calculator further on very small screens */
-      .calc-result-card { padding: 24px 16px; }
-      .calc-monthly-num { font-size: 2rem; }
-      .calc-secondary-num { font-size: 1.3rem; }
+      .calc-secondary-num { font-size: 1.2rem; }
+      .calc-secondary-row { gap: 10px; }
     }
 
     /* ============================================================
@@ -1157,7 +1158,9 @@
       color: var(--blue);
       box-shadow: 0 1px 4px rgba(13,27,51,.1);
     }
+    .calc-fields-col { order: 1; }
     .calc-result-card {
+      order: 2;
       background: var(--navy);
       border-radius: var(--r);
       padding: 40px 36px;
@@ -1252,9 +1255,6 @@
       color: var(--muted);
       margin-top: 18px;
       line-height: 1.5;
-    }
-    @media (max-width: 860px) {
-      .calc-result-card { padding: 32px 24px; }
     }
   </style>
 </head>
@@ -1692,42 +1692,10 @@
         <h2>See What Missed Calls Are Costing You</h2>
         <p>Plug in your numbers and watch the real cost of missed calls appear in real time.</p>
       </div>
-      <div class="calc-layout reveal d2">
+      <div class="calc-layout">
 
-        <!-- Inputs -->
-        <div class="calc-fields">
-          <div>
-            <div class="wc-field-label">Average Job Value</div>
-            <div class="wc-input-wrap">
-              <span class="wc-prefix">$</span>
-              <input type="number" id="wc-job-value" class="wc-input" value="350" min="0" step="25" aria-label="Average job value in dollars">
-            </div>
-          </div>
-          <div>
-            <div class="wc-field-label">
-              Missed Calls
-              <div class="wc-toggle">
-                <button class="wc-toggle-btn active" id="wc-btn-day" onclick="wcSetMode('day')">Per Day</button>
-                <button class="wc-toggle-btn" id="wc-btn-week" onclick="wcSetMode('week')">Per Week</button>
-              </div>
-            </div>
-            <div class="wc-input-wrap">
-              <input type="number" id="wc-missed" class="wc-input" value="3" min="0" step="1" aria-label="Number of missed calls">
-              <span class="wc-suffix" id="wc-suffix">calls / day</span>
-            </div>
-          </div>
-          <div>
-            <div class="wc-field-label">Conversion Rate</div>
-            <div class="wc-input-wrap">
-              <input type="number" id="wc-conv" class="wc-input" value="30" min="1" max="100" step="5" aria-label="Conversion rate percentage">
-              <span class="wc-suffix">% of missed calls book</span>
-            </div>
-          </div>
-          <p class="calc-footnote">Calculated on a 30-day month. Based on calls that ring through but go unanswered.</p>
-        </div>
-
-        <!-- Result card -->
-        <div class="calc-result-card">
+        <!-- Result card: first in DOM so it's on top on mobile -->
+        <div class="calc-result-card reveal">
           <div class="calc-result-pill">
             <span class="calc-result-pill-dot"></span>
             Live Estimate
@@ -1748,6 +1716,40 @@
           </div>
           <div class="calc-roi-note" id="wc-roi-note">
             If Welgent recovers just <strong id="wc-breakeven">2 jobs</strong> a month, it more than pays for itself — everything else is revenue you weren't capturing.
+          </div>
+        </div>
+
+        <!-- Inputs -->
+        <div class="calc-fields-col reveal d2">
+          <div class="calc-fields">
+            <div>
+              <div class="wc-field-label">Average Job Value</div>
+              <div class="wc-input-wrap">
+                <span class="wc-prefix">$</span>
+                <input type="number" id="wc-job-value" class="wc-input" value="350" min="0" step="25" aria-label="Average job value in dollars">
+              </div>
+            </div>
+            <div>
+              <div class="wc-field-label">
+                Missed Calls
+                <div class="wc-toggle">
+                  <button class="wc-toggle-btn active" id="wc-btn-day" onclick="wcSetMode('day')">Per Day</button>
+                  <button class="wc-toggle-btn" id="wc-btn-week" onclick="wcSetMode('week')">Per Week</button>
+                </div>
+              </div>
+              <div class="wc-input-wrap">
+                <input type="number" id="wc-missed" class="wc-input" value="3" min="0" step="1" aria-label="Number of missed calls">
+                <span class="wc-suffix" id="wc-suffix">calls / day</span>
+              </div>
+            </div>
+            <div>
+              <div class="wc-field-label">Conversion Rate</div>
+              <div class="wc-input-wrap">
+                <input type="number" id="wc-conv" class="wc-input" value="30" min="1" max="100" step="5" aria-label="Conversion rate percentage">
+                <span class="wc-suffix">% of missed calls book</span>
+              </div>
+            </div>
+            <p class="calc-footnote">Calculated on a 30-day month. Based on calls that ring through but go unanswered.</p>
           </div>
         </div>
 
