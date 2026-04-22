@@ -854,8 +854,9 @@
       .ind-grid { grid-template-columns: 1fr 1fr; }
       .value-inner { grid-template-columns: 1fr; gap: 48px; }
       .val-stats { max-width: 460px; }
-      .calc-layout { grid-template-columns: 1fr; }
+      .calc-layout { grid-template-columns: 1fr; gap: 28px; }
       .calc-layout > * { min-width: 0; }
+      .calc-result-card { order: -1; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
@@ -885,11 +886,17 @@
       .how-head { margin-bottom: 48px; }
       .hero-sub { font-size: 16px; }
       /* Calculator mobile */
+      #calculator { padding: 56px 0; }
       .calc-result-card { padding: 28px 20px; }
+      .calc-result-pill { margin-bottom: 12px; }
       .calc-monthly-num { font-size: 2.6rem; }
-      .calc-monthly-sub { font-size: 12px; word-break: break-word; }
+      .calc-monthly-sub { font-size: 12px; word-break: break-word; margin-bottom: 16px; }
+      .calc-divider { margin-bottom: 16px; }
+      .calc-secondary-row { margin-bottom: 16px; }
+      .calc-roi-note { display: none; }
+      .calc-fields { gap: 16px; }
       .wc-toggle-btn { padding: 4px 9px; font-size: 11px; }
-      .calc-header { margin-bottom: 32px; }
+      .calc-header { margin-bottom: 24px; }
       .wc-field-label { flex-wrap: wrap; gap: 8px; }
       .wc-input { padding: 12px 14px; font-size: 1.2rem; }
       .wc-prefix { padding: 0 12px; }
@@ -900,13 +907,13 @@
       .hero-visual { display: none; }
       .hero-inner { grid-template-columns: 1fr; }
       .hero-h1 { font-size: 2.2rem; }
-      .calc-secondary-row { gap: 20px; }
+      .calc-secondary-row { gap: 12px; }
       .channel-cards { gap: 10px; }
       .ch-card { padding: 18px 16px; }
       .ind-card { padding: 22px 18px; }
       /* Tighten calculator further on very small screens */
       .calc-result-card { padding: 24px 16px; }
-      .calc-monthly-num { font-size: 2.2rem; }
+      .calc-monthly-num { font-size: 2rem; }
       .calc-secondary-num { font-size: 1.3rem; }
     }
 
