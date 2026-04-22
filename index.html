@@ -774,38 +774,6 @@
     .val-lbl { font-size: 12.5px; color: rgba(255,255,255,.35); line-height: 1.45; }
 
     /* ============================================================
-       FINAL CTA
-    ============================================================ */
-    #cta-final {
-      background: var(--navy);
-      border-top: 1px solid rgba(255,255,255,.05);
-      padding: 120px 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    #cta-final::before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 750px; height: 420px;
-      background: radial-gradient(ellipse, rgba(29,111,255,.13) 0%, transparent 68%);
-      pointer-events: none;
-    }
-    .cta-inner { position: relative; max-width: 580px; margin: 0 auto; }
-    .cta-inner h2 {
-      font-size: clamp(2.4rem, 4.5vw, 3.75rem);
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.04em;
-      margin-bottom: 20px;
-      line-height: 1.04;
-    }
-    .cta-inner p { font-size: 18px; color: rgba(255,255,255,.58); line-height: 1.65; margin-bottom: 42px; }
-    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-
-    /* ============================================================
        FOOTER
     ============================================================ */
     footer {
@@ -906,8 +874,6 @@
       .foot-legal { flex-wrap: wrap; justify-content: center; }
       .hero-ctas { flex-direction: column; }
       .hero-ctas .btn { width: 100%; }
-      .cta-btns { flex-direction: column; align-items: center; }
-      .cta-btns .btn { width: 100%; max-width: 300px; }
       .cbubble { max-width: 78%; }
       .conv-head { margin-bottom: 36px; }
       .problem-head { margin-bottom: 40px; }
@@ -1296,7 +1262,6 @@
     }
     .calc-divider { height: 1px; background: rgba(255,255,255,.08); margin-bottom: 24px; }
     .calc-secondary-row { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 28px; }
-    .calc-secondary-item {}
     .calc-secondary-label {
       font-size: 11px;
       font-weight: 700;
