@@ -1214,7 +1214,6 @@
     }
     .wc-change-link:hover { color: rgba(255,255,255,.8); }
     .wc-reveal-btn {
-      display: none;
       width: 100%;
       margin-top: 24px;
       font-size: 16px;
@@ -1329,6 +1328,9 @@
       color: var(--muted);
       margin-top: 18px;
       line-height: 1.5;
+    }
+    @media (min-width: 901px) {
+      .wc-reveal-btn { display: none; }
     }
   </style>
 </head>
@@ -1806,7 +1808,7 @@
             <p class="calc-footnote">Calculated on a 30-day month. Based on calls that ring through but go unanswered.</p>
           </div>
           <button id="wc-reveal-btn" class="btn btn-primary wc-reveal-btn">
-            Show My Numbers
+            Get Results
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
         </div>
