@@ -825,7 +825,7 @@
       #calculator { padding: 0; border: none; }
       #calculator .container { padding: 0; max-width: none; }
       .calc-header { display: none; }
-      .calc-layout { display: block; position: relative; min-height: 100svh; overflow: hidden; background: var(--off-white); }
+      .calc-layout { display: block !important; position: relative; min-height: 100svh; overflow: hidden; background: var(--off-white); }
       .calc-fields-col {
         position: absolute; inset: 0;
         display: flex; flex-direction: column; justify-content: flex-start;
@@ -839,7 +839,7 @@
         opacity: 0; transform: translateY(-40px); pointer-events: none; z-index: 0;
       }
       .calc-result-card {
-        position: absolute;
+        position: absolute !important;
         top: 64px;
         left: 12px;
         right: 12px;
