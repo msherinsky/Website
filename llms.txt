@@ -1,0 +1,43 @@
+# Welgent
+
+> Welgent is a Conversational AI Sales Assistant for service businesses. It answers every inbound call 24/7, qualifies leads, books appointments, and follows up automatically so businesses never miss a customer.
+
+## What Welgent Does
+
+Welgent gives service businesses an always-on AI Sales Assistant that:
+
+- Answers every inbound phone call before the second ring, 24/7 including weekends and holidays
+- Holds natural voice conversations with callers — not robotic menus or hold music
+- Asks intake questions specific to the business (name, contact details, service type, job specifics)
+- Qualifies each lead before it reaches the business owner
+- Books appointments directly onto the business calendar
+- Sends automated confirmation and follow-up messages to reduce no-shows
+
+## The Problem It Solves
+
+62% of calls to small service businesses go unanswered. When a caller doesn't get an answer they move on to the next provider within minutes. Welgent eliminates missed-call revenue loss by ensuring every caller is greeted, helped, and booked.
+
+## Who It's For
+
+Service businesses that receive inbound calls from potential customers:
+- HVAC companies
+- Roofing contractors
+- Junk removal companies
+- Dental and medical practices
+- Fitness studios and gyms
+- Home services (plumbing, electrical, landscaping, cleaning)
+- Any other service business where phone calls drive new customers
+
+## Key Facts
+
+- Always available: operates 24 hours a day, 7 days a week
+- Natural language: speaks conversationally, not with scripted menus
+- Lead qualification: collects intake information and filters leads before escalating
+- Appointment booking: integrates with business calendars to schedule in real time
+- Automated follow-up: sends SMS and email follow-ups automatically
+- No staff required: the AI handles the full call flow without human involvement
+
+## Contact / Demo
+
+Website: https://welgent.com
+Book a demo: https://welgent.com/ (click "Book a Demo")
