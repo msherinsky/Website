@@ -44,6 +44,77 @@ function CheckMark() {
   );
 }
 
+/* The literal before/after: a recolored-template reseller site vs. a real
+   Welgent build — the contrast the whole pitch rests on, shown not told. */
+function TemplateMock() {
+  return (
+    <div className="overflow-hidden rounded-lg border border-black/10 bg-white shadow-[0_10px_30px_rgba(0,0,0,.3)]">
+      <div className="flex items-center gap-1.5 border-b border-black/5 bg-[#ededed] px-2.5 py-1.5">
+        <span className="h-2 w-2 rounded-full bg-[#cfcfcf]" />
+        <span className="h-2 w-2 rounded-full bg-[#cfcfcf]" />
+        <span className="h-2 w-2 rounded-full bg-[#cfcfcf]" />
+        <div className="ml-1.5 flex-1 truncate rounded bg-white px-2 py-0.5 text-[9px] text-[#a3a3a3]">premiercontractorpros.com</div>
+      </div>
+      <div className="flex items-center justify-between bg-white px-3 py-2">
+        <span className="rounded border border-dashed border-[#c4c4c4] px-1.5 py-0.5 text-[7.5px] font-bold uppercase tracking-wide text-[#b0b0b0]">{"{ Logo Here }"}</span>
+        <div className="flex items-center gap-1.5">
+          <span className="h-1.5 w-5 rounded bg-[#e2e2e2]" />
+          <span className="h-1.5 w-5 rounded bg-[#e2e2e2]" />
+          <span className="rounded bg-[#3f6fc9] px-1.5 py-1 text-[7.5px] font-semibold text-white">Get Quote</span>
+        </div>
+      </div>
+      <div className="relative h-[104px] bg-[#cdcdcd]">
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,#cdcdcd,#cdcdcd_9px,#c4c4c4_9px,#c4c4c4_18px)]" />
+        <span className="absolute left-2 top-2 rounded bg-black/10 px-1.5 py-0.5 text-[7px] font-medium text-white/80">stock photo</span>
+        <div className="absolute right-2 top-2 w-[46%] rounded-md bg-white p-2 shadow-md">
+          <div className="text-[8px] font-bold text-[#555]">Get A Free Quote</div>
+          <div className="mt-1.5 h-2.5 rounded border border-[#e0e0e0]" />
+          <div className="mt-1 h-2.5 rounded border border-[#e0e0e0]" />
+          <div className="mt-1.5 rounded bg-[#3f6fc9] py-1 text-center text-[8px] font-semibold text-white">Submit</div>
+        </div>
+      </div>
+      <div className="px-3 py-2.5">
+        <div className="text-[9px] italic leading-snug text-[#a0a0a0]">
+          &ldquo;Embrace the vision of a breathtaking and purposeful space, crafted with years of experience&hellip;&rdquo;
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function WelgentMock() {
+  return (
+    <div className="overflow-hidden rounded-lg border border-line bg-white shadow-[0_10px_34px_rgba(235,154,1,.22)]">
+      <div className="flex items-center gap-1.5 border-b border-line bg-base-2/70 px-2.5 py-1.5">
+        <span className="h-2 w-2 rounded-full bg-red-400/70" />
+        <span className="h-2 w-2 rounded-full bg-amber-400/80" />
+        <span className="h-2 w-2 rounded-full bg-green-400/70" />
+        <div className="ml-1.5 flex-1 truncate rounded bg-white px-2 py-0.5 text-[9px] text-slate-soft">yourbusiness.com</div>
+      </div>
+      <div className="flex items-center justify-between border-b border-line px-3 py-2">
+        <span className="font-heading text-[11px] font-extrabold text-ink">Your Business</span>
+        <span className="rounded-full bg-amber px-2 py-0.5 text-[8px] font-bold text-coal">Free Quote</span>
+      </div>
+      <div className="px-3 pt-2.5">
+        <span className="inline-block rounded-full bg-amber-soft px-1.5 py-0.5 text-[8px] font-semibold text-amber-ink">★★★★★ 5.0 · 57 reviews</span>
+        <div className="mt-1.5 font-heading text-[13px] font-bold leading-tight text-ink">Junk gone today — priced on the call.</div>
+        <div className="mt-2 flex gap-1.5">
+          <span className="rounded-full bg-amber px-2 py-1 text-[8px] font-bold text-coal">📞 Call Now</span>
+          <span className="rounded-full border border-line px-2 py-1 text-[8px] font-semibold text-ink">Get a Quote</span>
+        </div>
+      </div>
+      <div className="mx-3 my-2.5 rounded-lg bg-base-2/70 p-2">
+        <div className="text-[8px] leading-none text-amber">★★★★★</div>
+        <div className="mt-1 text-[8.5px] italic leading-snug text-ink-soft">&ldquo;Showed up within 30 minutes and hauled all of it.&rdquo;</div>
+      </div>
+      <div className="flex items-center justify-between bg-coal px-3 py-1.5">
+        <span className="text-[8.5px] font-bold text-white">📞 (404) 632-9165</span>
+        <span className="rounded-full bg-amber px-2 py-0.5 text-[8px] font-bold text-coal">Free Quote</span>
+      </div>
+    </div>
+  );
+}
+
 export function Difference() {
   return (
     <section id="difference" className="relative isolate overflow-hidden bg-navy-alt py-24">
@@ -79,6 +150,9 @@ export function Difference() {
               <p className="mt-1 text-[13.5px] text-white/40">
                 The same site fifty other businesses already got.
               </p>
+              <div className="mt-5 [filter:grayscale(0.35)]">
+                <TemplateMock />
+              </div>
               <ul className="mt-6 flex flex-col gap-4">
                 {THEM.map((item) => (
                   <li key={item.feat} className="flex gap-3 text-[15px] leading-snug text-white/55">
@@ -104,6 +178,9 @@ export function Difference() {
               <p className="mt-1 text-[13.5px] text-white/45">
                 Researched, custom-built, and unmistakably yours.
               </p>
+              <div className="mt-5">
+                <WelgentMock />
+              </div>
               <ul className="mt-6 flex flex-col gap-4">
                 {US.map((item) => (
                   <li key={item.feat} className="flex gap-3 text-[15px] leading-snug text-white/90">
