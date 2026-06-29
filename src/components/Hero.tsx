@@ -44,16 +44,16 @@ export function Hero() {
         </div>
 
         <h1 className="rise font-heading text-[clamp(2.9rem,7vw,5.4rem)] font-bold leading-[0.98] tracking-[-0.035em] text-ink">
-          When they search,
+          Turn every search
           <br />
-          be the <span className="grad-text">obvious choice</span>.
+          into a <span className="grad-text">booked job</span>.
         </h1>
 
         <p className="rise mx-auto mt-7 max-w-2xl text-[18px] leading-[1.6] text-slate" style={{ animationDelay: "0.08s" }}>
-          We build you a website that actually brings in jobs, an AI that
-          answers and books them for you, and follow-ups that earn a review
-          after every job. We run all of it, because{" "}
-          <span className="font-semibold text-ink">we want to help you grow.</span>
+          Get found, look like the obvious choice, answer every call and chat,
+          book the job, and earn the review — the whole system,{" "}
+          <span className="font-semibold text-ink">built and run for you</span>,
+          so the work keeps coming while you&apos;re out doing it.
         </p>
 
         <div className="rise mt-9 flex flex-wrap items-center justify-center gap-5" style={{ animationDelay: "0.16s" }}>

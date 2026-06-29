@@ -12,7 +12,7 @@ export function AuditCTA() {
       <DarkAtmosphere />
       <Reveal className="relative mx-auto max-w-2xl px-6 text-center">
         <h2 className="font-heading text-[clamp(2.7rem,5.8vw,4.5rem)] font-bold leading-[0.99] tracking-[-0.03em]">
-          Ready to be the obvious choice?
+          Ready to turn searches into booked jobs?
         </h2>
         <p className="mx-auto mt-5 max-w-lg text-[18px] leading-relaxed text-white/70">
           Start with a free audit. We&apos;ll show you exactly what&apos;s costing

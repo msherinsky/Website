@@ -34,7 +34,7 @@ export function Proof() {
         <Reveal className="max-w-2xl">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-blue">Proof</p>
           <h2 className="font-heading text-[clamp(2.5rem,5.4vw,4.1rem)] font-bold leading-[1.0] tracking-[-0.03em] text-ink">
-            Local businesses that stopped guessing.
+            Owners who stopped guessing — and started booking.
           </h2>
           <p className="mt-5 text-[17px] leading-relaxed text-slate">
             Real owners, real results. Here&apos;s what changes once the system is
@@ -58,6 +58,16 @@ export function Proof() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="mt-12 text-center">
+          <a
+            href="#audit"
+            data-book
+            className="inline-block rounded-full bg-amber px-7 py-3.5 text-[15px] font-semibold text-coal shadow-[0_8px_22px_rgba(235,154,1,.3)] transition hover:bg-amber-dk"
+          >
+            See if it&apos;d work for you →
+          </a>
+        </Reveal>
       </div>
     </section>
   );

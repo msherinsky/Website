@@ -51,6 +51,14 @@ export function Mornings() {
               </li>
             ))}
           </ul>
+          <p className="mt-8 text-[15px] font-semibold text-ink">Want mornings like that?</p>
+          <a
+            href="#audit"
+            data-book
+            className="mt-3 inline-block rounded-full bg-amber px-7 py-3.5 text-[15px] font-semibold text-coal shadow-[0_8px_22px_rgba(235,154,1,.3)] transition hover:bg-amber-dk"
+          >
+            Get a Free Audit
+          </a>
         </Reveal>
 
         {/* phone lock screen */}

@@ -25,7 +25,7 @@ export function SystemRing() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-amber-ink">What we do</p>
           <h2 className="font-heading text-[clamp(2.2rem,4.6vw,3.4rem)] font-bold leading-[1.02] tracking-[-0.03em] text-ink">
-            One system that gets you found, booked, and trusted.
+            Five tools&apos; worth of work. One system you never touch.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-[17px] leading-relaxed text-slate">
             Two engines bring in and book the work — and everything feeds the one dashboard where you see it all. Tap any piece to dive in.

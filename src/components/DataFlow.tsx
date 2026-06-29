@@ -62,7 +62,7 @@ export function DataFlow() {
           <div className="mx-auto max-w-md">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-ink">How it works</p>
             <h2 className="mt-2 font-heading text-[clamp(1.9rem,7vw,2.6rem)] font-bold leading-[1.05] tracking-[-0.03em] text-ink">
-              One lead, start to finish — live in your dashboard.
+              Watch one lead go from &ldquo;just looking&rdquo; to a five-star review.
             </h2>
             <div className="mt-8">
               <Scene stage={STAGES.length} />
@@ -102,7 +102,7 @@ function PinnedConveyor({ variant }: { variant: "desktop" | "mobile" }) {
           <div className="mx-auto w-full max-w-md shrink-0">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-ink">How it works</p>
             <h2 className="mt-1 font-heading text-[clamp(1.45rem,5.4vw,2rem)] font-bold leading-[1.08] tracking-[-0.03em] text-ink">
-              One lead, from first call to a review on your site.
+              Watch one lead go from &ldquo;just looking&rdquo; to a five-star review.
             </h2>
           </div>
 
@@ -174,7 +174,7 @@ function PinnedConveyor({ variant }: { variant: "desktop" | "mobile" }) {
         <div className="mx-auto w-full max-w-[1180px]">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-ink">How it works</p>
           <h2 className="mt-2 max-w-2xl font-heading text-[clamp(1.7rem,3vw,2.5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-ink">
-            One lead — from first call to a review on your site.
+            Watch one lead go from &ldquo;just looking&rdquo; to a five-star review.
           </h2>
         </div>
 
