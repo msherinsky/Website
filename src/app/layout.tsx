@@ -18,7 +18,9 @@ const heading = localFont({
   variable: "--font-heading",
   src: "./fonts/bricolage-grotesque.woff2",
   weight: "400 800",
-  display: "swap",
+  // `optional`: hero headline (LCP) paints in the size-matched fallback and
+  // never re-paints for the web font, so mobile LCP isn't font-swap-bound.
+  display: "optional",
 });
 const body = localFont({
   variable: "--font-body",
