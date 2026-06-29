@@ -84,7 +84,7 @@ export function SectionConnector({
       {/* tense: a downward chevron under the node */}
       {variant === "tense" && (
         <svg
-          className={`absolute left-1/2 top-[calc(50%+12px)] z-10 -translate-x-1/2 ${onDark ? "text-white/30" : "text-slate-soft/70"}`}
+          className={`absolute left-1/2 top-[calc(50%+12px)] z-10 -translate-x-1/2 ${onDark ? "text-white/55" : "text-slate/60"}`}
           width="14" height="9" viewBox="0 0 14 9" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
         >
           <path d="M1 1l6 6 6-6" />
@@ -95,7 +95,7 @@ export function SectionConnector({
       {label && (
         <span
           className={`absolute left-1/2 top-[calc(50%+20px)] z-10 -translate-x-1/2 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.14em] ${
-            onDark ? "text-white/45" : "text-slate-soft"
+            onDark ? "text-white/70" : "text-slate"
           }`}
         >
           {label}
