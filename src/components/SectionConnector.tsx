@@ -94,8 +94,8 @@ export function SectionConnector({
       {/* kicker (earned handoffs only) */}
       {label && (
         <span
-          className={`absolute left-1/2 top-[calc(50%+20px)] z-10 -translate-x-1/2 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.14em] ${
-            onDark ? "text-white/70" : "text-slate"
+          className={`absolute left-1/2 top-[calc(50%+18px)] z-10 -translate-x-1/2 whitespace-nowrap rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] ${
+            onDark ? "bg-coal/75 text-white/90" : "bg-base-2 text-slate"
           }`}
         >
           {label}
