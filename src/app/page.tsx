@@ -4,6 +4,7 @@ import { SystemRing } from "@/components/SystemRing";
 import { DataFlow } from "@/components/DataFlow";
 import { Mornings } from "@/components/Mornings";
 import { Proof } from "@/components/Proof";
+import { Difference } from "@/components/Difference";
 import { FAQ } from "@/components/FAQ";
 import { AuditCTA } from "@/components/AuditCTA";
 import { SectionConnector } from "@/components/SectionConnector";
@@ -44,13 +45,17 @@ export default function Home() {
 
       {/* 6 — PROOF (reviews) */}
       <Proof />
-      <SectionConnector from="base-2" to="base" variant="tense" />
+      <SectionConnector from="base-2" to="navy-alt" variant="slant-left" label="Why we're different" />
 
-      {/* 7 — FAQ */}
+      {/* 7 — WHY WE'RE DIFFERENT (vs. the template shops) */}
+      <Difference />
+      <SectionConnector from="navy-alt" to="base" variant="fade" />
+
+      {/* 8 — FAQ */}
       <FAQ />
       <SectionConnector from="base" to="navy" variant="slant-left" />
 
-      {/* 8 — CLOSE (free audit) */}
+      {/* 9 — CLOSE (free audit) */}
       <AuditCTA />
     </>
   );

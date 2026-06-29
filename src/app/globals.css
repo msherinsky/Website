@@ -412,10 +412,13 @@ h1, h2, h3, h4, .font-heading {
    so the LCP element (hero headline) is never hidden behind hydration. The JS
    <Reveal> stays for below-the-fold scroll-triggered reveals. */
 @keyframes rise {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: none; }
+  from { transform: translateY(20px); }
+  to   { transform: none; }
 }
-.rise { animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+/* translate-only (NO opacity fade): keeps the hero headline fully opaque from
+   first paint so it counts as the LCP element immediately. Fading opacity from
+   0 makes Chrome exclude the element from LCP, which tanks mobile LCP. */
+.rise { animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
 @media (prefers-reduced-motion: reduce) {
   .rise,
