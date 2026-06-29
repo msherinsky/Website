@@ -32,7 +32,7 @@ export default function AboutPage() {
         <div className="warm-bloom pointer-events-none absolute left-1/2 top-[-180px] h-[520px] w-[860px] -translate-x-1/2" aria-hidden />
         <div className="relative mx-auto max-w-3xl text-center">
           <Reveal>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-amber">About Welgent</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-amber-ink">About Welgent</p>
             <h1 className="font-heading text-[clamp(2.4rem,5.4vw,4rem)] font-bold leading-[1.02] tracking-[-0.035em] text-ink">
               We build the system. <span className="grad-text">You run the jobs.</span>
             </h1>
@@ -62,7 +62,7 @@ export default function AboutPage() {
       <section className="bg-base px-6 py-24">
         <div className="mx-auto max-w-[1100px]">
           <Reveal className="max-w-2xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-amber">What we believe</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-amber-ink">What we believe</p>
             <h2 className="font-heading text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.05] tracking-[-0.03em] text-ink">
               How we think about your business.
             </h2>

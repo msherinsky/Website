@@ -60,7 +60,7 @@ export function DataFlow() {
       <div className={reduce ? "block" : "hidden"}>
         <div className="px-6 py-20">
           <div className="mx-auto max-w-md">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber">How it works</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-ink">How it works</p>
             <h2 className="mt-2 font-heading text-[clamp(1.9rem,7vw,2.6rem)] font-bold leading-[1.05] tracking-[-0.03em] text-ink">
               One lead, start to finish — live in your dashboard.
             </h2>
@@ -100,7 +100,7 @@ function PinnedConveyor({ variant }: { variant: "desktop" | "mobile" }) {
       <div ref={ref} className="relative h-[440vh]">
         <div className="sticky top-0 flex h-svh flex-col overflow-hidden px-5 pt-16 pb-4">
           <div className="mx-auto w-full max-w-md shrink-0">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber">How it works</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-ink">How it works</p>
             <h2 className="mt-1 font-heading text-[clamp(1.45rem,5.4vw,2rem)] font-bold leading-[1.08] tracking-[-0.03em] text-ink">
               One lead, from first call to a review on your site.
             </h2>
@@ -158,7 +158,7 @@ function PinnedConveyor({ variant }: { variant: "desktop" | "mobile" }) {
                 style={{ left: dotX }}
               />
             </div>
-            <div className="mt-2.5 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-amber">
+            <div className="mt-2.5 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-amber-ink">
               {STAGES[stage].marker}
             </div>
           </div>
@@ -172,7 +172,7 @@ function PinnedConveyor({ variant }: { variant: "desktop" | "mobile" }) {
     <div ref={ref} className="relative h-[360vh]">
       <div className="sticky top-0 flex h-screen flex-col overflow-hidden px-6 pt-20 pb-6">
         <div className="mx-auto w-full max-w-[1180px]">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber">How it works</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-ink">How it works</p>
           <h2 className="mt-2 max-w-2xl font-heading text-[clamp(1.7rem,3vw,2.5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-ink">
             One lead — from first call to a review on your site.
           </h2>
@@ -219,7 +219,7 @@ function PinnedConveyor({ variant }: { variant: "desktop" | "mobile" }) {
               <span
                 key={s.key}
                 className={`text-[11px] font-semibold uppercase tracking-wide transition-colors ${
-                  i === stage ? "text-amber" : i < stage ? "text-ink/60" : "text-slate-soft"
+                  i === stage ? "text-amber-ink" : i < stage ? "text-ink/60" : "text-slate-soft"
                 }`}
               >
                 {s.marker}
@@ -470,7 +470,7 @@ function LeadPanel({ stage }: { stage: number }) {
 function CrmSavedPill() {
   return (
     <div className="flex items-center gap-3 rounded-2xl border border-line bg-white p-3.5 shadow-[0_12px_36px_rgba(26,26,26,.07)]">
-      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#e7f6ee] text-[15px] font-bold text-[#1f9d55]">✓</span>
+      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#e7f6ee] text-[15px] font-bold text-[#157a40]">✓</span>
       <div className="min-w-0">
         <div className="font-heading text-[13.5px] font-bold leading-tight text-ink">Maria Garcia · Junk pickup</div>
         <div className="mt-0.5 text-[11.5px] leading-tight text-slate-soft">Saved &amp; confirmed in your CRM · Tue 9:00 AM</div>
@@ -542,7 +542,7 @@ function CrmRecord({ stage, compact = false }: { stage: number; compact?: boolea
             <div className="text-[11px] text-slate-soft">Welgent CRM</div>
           </div>
         </div>
-        <span className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-[#1f9d55]">
+        <span className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-[#157a40]">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1f9d55] opacity-60" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-[#1f9d55]" />
@@ -562,7 +562,7 @@ function CrmRecord({ stage, compact = false }: { stage: number; compact?: boolea
               className="flex items-center justify-between gap-3"
             >
               <span className={`font-medium text-slate-soft ${compact ? "text-[11.5px]" : "text-[12px]"}`}>{f.label}</span>
-              <span className={`font-semibold ${f.good ? "text-[#1f9d55]" : "text-ink"} ${compact ? "text-[12.5px]" : "text-[13.5px]"}`}>{f.value}</span>
+              <span className={`font-semibold ${f.good ? "text-[#157a40]" : "text-ink"} ${compact ? "text-[12.5px]" : "text-[13.5px]"}`}>{f.value}</span>
             </motion.div>
           ))}
         </AnimatePresence>
@@ -611,7 +611,7 @@ function SiteMock() {
       </div>
       <div className="px-6 py-7 text-center">
         <motion.div layout>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-amber">Sarasota Junk Removal</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-ink">Sarasota Junk Removal</p>
           <h3 className="mt-2 font-heading text-[clamp(1.3rem,2vw,1.7rem)] font-bold leading-tight tracking-[-0.02em] text-ink">
             Junk gone in an hour — book in 60 seconds.
           </h3>

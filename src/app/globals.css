@@ -13,12 +13,13 @@
   --color-ink: #1a1a1a; /* headings + primary text */
   --color-ink-soft: #2b2b2b; /* secondary text */
   --color-slate: #6b675e; /* muted warm grey */
-  --color-slate-soft: #8a8578; /* tertiary / faint */
+  --color-slate-soft: #6f6a5e; /* tertiary / faint (darkened for AA contrast) */
   --color-line: #e7e4da; /* warm hairline */
 
   /* ── Accents ──────────────────────────────────────────────── */
   --color-amber: #eb9a01; /* primary accent / CTA */
   --color-amber-dk: #c97f00; /* amber hover/active */
+  --color-amber-ink: #9a6200; /* dark amber for small label text — AA contrast on cream */
   --color-amber-soft: #fbf0da; /* amber wash bg */
   --color-magenta: #cc3366; /* secondary accent (sparing) */
   --color-coal: #161412; /* inverted band: footer / dramatic section */
@@ -407,7 +408,17 @@ h1, h2, h3, h4, .font-heading {
 .amb-drift-a { animation: ambDriftA 26s ease-in-out infinite; }
 .amb-drift-b { animation: ambDriftB 32s ease-in-out infinite; }
 
+/* CSS-only entrance for above-the-fold content: runs on first paint with no JS,
+   so the LCP element (hero headline) is never hidden behind hydration. The JS
+   <Reveal> stays for below-the-fold scroll-triggered reveals. */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+.rise { animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
 @media (prefers-reduced-motion: reduce) {
+  .rise,
   .orbit-ring,
   .orbit-ring .orbit-icon,
   .orbit-core,

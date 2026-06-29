@@ -75,7 +75,7 @@ function DesignTab() {
   return (
     <div>
       <div className="mx-auto max-w-2xl text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">Web Design</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-ink">Web Design</p>
         <h2 className="mt-2 font-heading text-[clamp(1.9rem,3.6vw,2.8rem)] font-bold leading-[1.08] tracking-[-0.03em] text-ink">
           The obvious choice, the second they land.
         </h2>
@@ -162,7 +162,7 @@ function SeoTab({ reduce }: { reduce: boolean }) {
   return (
     <div>
       <div className="mx-auto max-w-2xl text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">Your Reach</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-ink">Your Reach</p>
         <h2 className="mt-2 font-heading text-[clamp(1.9rem,3.6vw,2.8rem)] font-bold leading-[1.08] tracking-[-0.03em] text-ink">
           The name everyone around you already knows.
         </h2>

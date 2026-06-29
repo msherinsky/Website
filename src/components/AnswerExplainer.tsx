@@ -24,7 +24,7 @@ export function AnswerExplainer() {
     <section className="bg-base px-6 py-20">
       <div className="mx-auto max-w-[1120px]">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">Always answered</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-ink">Always answered</p>
           <h2 className="mt-2 font-heading text-[clamp(1.9rem,3.6vw,2.8rem)] font-bold leading-[1.08] tracking-[-0.03em] text-ink">
             Put the phone down. It&apos;s handled.
           </h2>
@@ -75,7 +75,7 @@ function PhoneMock() {
             </span>
             <span className="min-w-0">
               <span className="block font-heading text-[13px] font-bold leading-tight text-ink">AI Receptionist</span>
-              <span className="flex items-center gap-1 text-[10px] font-semibold text-[#1f9d55]">
+              <span className="flex items-center gap-1 text-[10px] font-semibold text-[#157a40]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#1f9d55]" /> Answered · new customer
               </span>
             </span>

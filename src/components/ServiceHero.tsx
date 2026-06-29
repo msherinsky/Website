@@ -36,7 +36,7 @@ export function ServiceHero({ service: s, inOverlay = false }: { service: Servic
           <span className={`h-11 w-11 ${a.icon}`}>{ICONS[s.icon]}</span>
         </div>
 
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-amber">
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-amber-ink">
           {s.hero.eyebrow}
         </p>
         <h1 className="font-heading text-[clamp(2.4rem,5.4vw,4rem)] font-bold leading-[1.02] tracking-[-0.035em] text-ink">

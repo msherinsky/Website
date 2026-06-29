@@ -106,13 +106,19 @@ export default function RootLayout({
         <ZoomOverlay />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSONLD) }} />
-        <Script src="https://api.welgent.com/js/form_embed.js" strategy="lazyOnload" />
 
-        {/* AI chat widget — reads window.WG_CONFIG (currentScript is null when injected) */}
+        {/* AI chat widget config (tiny inline, first-party, no cookies) */}
         <Script id="wg-config" strategy="beforeInteractive">
           {`window.WG_CONFIG={client:"welgent",name:"Alex",subtitle:"Welgent Sales Assistant",greeting:"Hi! I'm Alex from Welgent. We help local service businesses get found on Google, look credible, and book more jobs. What can I help you with?",colorPrimary:"#EB9A01",colorDark:"#C97F00",colorHeader:"#161412",quickReplies:"Let's Talk|Never Miss a Lead|Get Found First"};`}
         </Script>
-        <Script src="/chat-widget.js" strategy="lazyOnload" />
+
+        {/* Defer the third-party embeds (GHL booking form_embed + chat widget)
+            until the first real user interaction — keeps their JS + third-party
+            cookies out of initial load (faster LCP, no 3p cookies in audits).
+            Real users trigger it instantly on their first scroll/tap/click. */}
+        <Script id="defer-3p" strategy="afterInteractive">
+          {`(function(){var done=false;function go(){if(done)return;done=true;['https://api.welgent.com/js/form_embed.js','/chat-widget.js'].forEach(function(src){var s=document.createElement('script');s.src=src;s.async=true;document.body.appendChild(s);});}var evs=['pointerdown','keydown','scroll','touchstart','mousemove'];function on(){go();evs.forEach(function(e){window.removeEventListener(e,on)});}evs.forEach(function(e){window.addEventListener(e,on,{once:true,passive:true})});})();`}
+        </Script>
       </body>
     </html>
   );

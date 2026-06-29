@@ -50,7 +50,7 @@ export function BookingModal() {
 
   return (
     <div
-      aria-hidden={!open}
+      inert={!open}
       className={`fixed inset-0 z-300 flex items-center justify-center p-4 transition-opacity duration-300 ${
         open ? "opacity-100" : "pointer-events-none opacity-0"
       }`}

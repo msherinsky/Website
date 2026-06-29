@@ -23,7 +23,7 @@ export function SystemRing() {
     <section id="system" className="relative overflow-hidden bg-base px-6 py-24 sm:py-28">
       <div className="mx-auto max-w-[1140px]">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-amber">What we do</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-amber-ink">What we do</p>
           <h2 className="font-heading text-[clamp(2.2rem,4.6vw,3.4rem)] font-bold leading-[1.02] tracking-[-0.03em] text-ink">
             One system that gets you found, booked, and trusted.
           </h2>
@@ -124,7 +124,7 @@ function HubDashboard() {
           <span className="font-logo text-[17px] font-extrabold tracking-tight text-ink">
             Wel<span className="text-amber">gent</span>
           </span>
-          <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-[#1f9d55]">
+          <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-[#157a40]">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1f9d55] opacity-60" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#1f9d55]" />
@@ -152,7 +152,7 @@ function HubDashboard() {
         <div className="mt-3 rounded-xl bg-base/80 px-3.5 py-3">
           <div className="mb-1.5 flex items-center justify-between text-[10.5px] text-slate-soft">
             <span>Leads this month</span>
-            <span className="font-semibold text-[#1f9d55]">▲ 38%</span>
+            <span className="font-semibold text-[#157a40]">▲ 38%</span>
           </div>
           <svg viewBox="0 0 200 40" className="h-9 w-full" preserveAspectRatio="none" aria-hidden>
             <polyline points="0,34 28,30 56,31 84,22 112,24 140,14 168,11 200,4" fill="none" stroke="var(--color-amber)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />

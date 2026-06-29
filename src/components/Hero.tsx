@@ -1,4 +1,3 @@
-import { Reveal } from "./Reveal";
 import { DotField } from "./DotField";
 
 /**
@@ -36,35 +35,28 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-3xl">
-        <Reveal>
-          <div className="mb-7 flex items-center justify-center gap-3 text-slate">
-            <span className="hidden h-px w-8 bg-gradient-to-r from-transparent to-amber/60 sm:block" />
-            <span className="text-[13px] font-semibold tracking-[0.01em]">
-              Marketing + operations for local service businesses
-            </span>
-            <span className="hidden h-px w-8 bg-gradient-to-l from-transparent to-amber/60 sm:block" />
-          </div>
-        </Reveal>
+        <div className="rise mb-7 flex items-center justify-center gap-3 text-slate">
+          <span className="hidden h-px w-8 bg-gradient-to-r from-transparent to-amber/60 sm:block" />
+          <span className="text-[13px] font-semibold tracking-[0.01em]">
+            Marketing + operations for local service businesses
+          </span>
+          <span className="hidden h-px w-8 bg-gradient-to-l from-transparent to-amber/60 sm:block" />
+        </div>
 
-        <Reveal delay={0.08}>
-          <h1 className="font-heading text-[clamp(2.9rem,7vw,5.4rem)] font-bold leading-[0.98] tracking-[-0.035em] text-ink">
-            When they search,
-            <br />
-            be the <span className="grad-text">obvious choice</span>.
-          </h1>
-        </Reveal>
+        <h1 className="rise font-heading text-[clamp(2.9rem,7vw,5.4rem)] font-bold leading-[0.98] tracking-[-0.035em] text-ink">
+          When they search,
+          <br />
+          be the <span className="grad-text">obvious choice</span>.
+        </h1>
 
-        <Reveal delay={0.16}>
-          <p className="mx-auto mt-7 max-w-2xl text-[18px] leading-[1.6] text-slate">
-            We build you a website that actually brings in jobs, an AI that
-            answers and books them for you, and follow-ups that earn a review
-            after every job. We run all of it, because{" "}
-            <span className="font-semibold text-ink">we want to help you grow.</span>
-          </p>
-        </Reveal>
+        <p className="rise mx-auto mt-7 max-w-2xl text-[18px] leading-[1.6] text-slate" style={{ animationDelay: "0.08s" }}>
+          We build you a website that actually brings in jobs, an AI that
+          answers and books them for you, and follow-ups that earn a review
+          after every job. We run all of it, because{" "}
+          <span className="font-semibold text-ink">we want to help you grow.</span>
+        </p>
 
-        <Reveal delay={0.24}>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-5">
+        <div className="rise mt-9 flex flex-wrap items-center justify-center gap-5" style={{ animationDelay: "0.16s" }}>
             <a
               href="#audit"
               data-book
@@ -79,22 +71,19 @@ export function Hero() {
               See how it works →
             </a>
           </div>
-        </Reveal>
-      </div>
+        </div>
 
       {/* honest stat strip */}
-      <Reveal delay={0.34}>
-        <div className="relative z-10 mt-16 grid w-full max-w-3xl grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-9 sm:grid-cols-4 sm:text-left">
-          {STATS.map((s) => (
-            <div key={s.num} className="px-1">
-              <div className="font-heading text-[clamp(1.9rem,3vw,2.6rem)] font-extrabold leading-none tracking-[-0.03em] text-ink">
-                {s.num}
-              </div>
-              <div className="mt-2.5 text-[12.5px] leading-snug text-slate">{s.label}</div>
+      <div className="rise relative z-10 mt-16 grid w-full max-w-3xl grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-9 sm:grid-cols-4 sm:text-left" style={{ animationDelay: "0.24s" }}>
+        {STATS.map((s) => (
+          <div key={s.num} className="px-1">
+            <div className="font-heading text-[clamp(1.9rem,3vw,2.6rem)] font-extrabold leading-none tracking-[-0.03em] text-ink">
+              {s.num}
             </div>
-          ))}
-        </div>
-      </Reveal>
+            <div className="mt-2.5 text-[12.5px] leading-snug text-slate">{s.label}</div>
+          </div>
+        ))}
+      </div>
 
       {/* quiet platform marquee */}
       <div
