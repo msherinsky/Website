@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 84">
+  <defs>
+    <linearGradient id="g1" gradientUnits="userSpaceOnUse" x1="26.32" y1="30.49" x2="13.68" y2="33.51">
+      <stop offset="0%"   stop-color="#bfdbfe"/>
+      <stop offset="20%"  stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="g2" gradientUnits="userSpaceOnUse" x1="38.94" y1="42.79" x2="30.06" y2="38.21">
+      <stop offset="0%"   stop-color="#bfdbfe"/>
+      <stop offset="20%"  stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="g3" gradientUnits="userSpaceOnUse" x1="55.95" y1="38.21" x2="47.05" y2="42.79">
+      <stop offset="0%"   stop-color="#cffafe"/>
+      <stop offset="20%"  stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+    </linearGradient>
+    <linearGradient id="g4" gradientUnits="userSpaceOnUse" x1="72.32" y1="33.52" x2="59.68" y2="30.49">
+      <stop offset="0%"   stop-color="#cffafe"/>
+      <stop offset="20%"  stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Square icon background — rx="16" matches iOS-style app icon corners at this size -->
+  <rect width="84" height="84" rx="16" fill="#0a0f2e"/>
+
+  <!-- W mark: 84x72 coordinate space, shifted down 6px to center vertically in the 84x84 square -->
+  <g transform="translate(0,6)">
+    <polygon points="21.02,8.39 31.62,52.59 18.98,55.61 8.38,11.41"  fill="url(#g1)"/>
+    <polygon points="31.84,56.59 46.04,28.99 37.16,24.41 22.96,52.01" fill="url(#g2)"/>
+    <polygon points="48.85,24.41 63.05,52.01 54.15,56.59 39.95,28.99" fill="url(#g3)"/>
+    <polygon points="67.02,55.62 77.62,11.42 64.98,8.39 54.38,52.59"  fill="url(#g4)"/>
+    <line x1="21.02" y1="8.39"  x2="31.62" y2="52.59" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" stroke-linecap="butt"/>
+    <line x1="31.84" y1="56.59" x2="46.04" y2="28.99" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" stroke-linecap="butt"/>
+    <line x1="48.85" y1="24.41" x2="63.05" y2="52.01" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" stroke-linecap="butt"/>
+    <line x1="67.02" y1="55.62" x2="77.62" y2="11.42" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" stroke-linecap="butt"/>
+  </g>
+</svg>
