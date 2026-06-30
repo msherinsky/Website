@@ -3,7 +3,6 @@ import { Problem } from "@/components/Problem";
 import { SystemRing } from "@/components/SystemRing";
 import { DataFlow } from "@/components/DataFlow";
 import { Mornings } from "@/components/Mornings";
-import { Proof } from "@/components/Proof";
 import { Difference } from "@/components/Difference";
 import { FAQ } from "@/components/FAQ";
 import { AuditCTA } from "@/components/AuditCTA";
@@ -17,7 +16,6 @@ import { SectionConnector } from "@/components/SectionConnector";
  *   What we do    → "So what do you actually do?"   (clickable ring → pages)
  *   How it works  → "How does it work for me?"      (data-flow conveyor)
  *   Mornings      → "What changes for me?"          (the payoff)
- *   Proof         → "Does it actually work?"
  *   FAQ           → "What about…?"
  *   Close         → "How do I start?"
  */
@@ -41,13 +39,9 @@ export default function Home() {
 
       {/* 5 — YOUR MORNINGS (the payoff) */}
       <Mornings />
-      <SectionConnector from="base" to="base-2" variant="subtle" label="See for yourself" />
+      <SectionConnector from="base" to="navy-alt" variant="slant-left" label="Why we're different" />
 
-      {/* 6 — PROOF (reviews) */}
-      <Proof />
-      <SectionConnector from="base-2" to="navy-alt" variant="slant-left" label="Why we're different" />
-
-      {/* 7 — WHY WE'RE DIFFERENT (vs. the template shops) */}
+      {/* 6 — WHY WE'RE DIFFERENT (vs. the template shops) */}
       <Difference />
       <SectionConnector from="navy-alt" to="base" variant="fade" />
 
