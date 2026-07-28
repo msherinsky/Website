@@ -125,6 +125,13 @@ export default function PrivacyPage() {
           Questions about this policy? Email <a href="mailto:matt@welgent.com">matt@welgent.com</a> or call{" "}
           <a href="tel:+14438569230">(443) 856-9230</a>.
         </p>
+        <p>
+          Welgent
+          <br />
+          7412 Newham Ln
+          <br />
+          Sarasota, FL 34240
+        </p>
       </LegalSection>
     </LegalPage>
   );

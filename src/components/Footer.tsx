@@ -39,13 +39,38 @@ export function Footer() {
               { href: "/#faq", label: "FAQ" },
             ]}
           />
-          <FooterCol
-            title="Contact"
-            links={[
-              { href: "mailto:matt@welgent.com", label: "matt@welgent.com" },
-              { href: "#audit", label: "Let's Talk" },
-            ]}
-          />
+          {/* Contact block carries the brand's email, phone, and physical
+              address. These must stay identical to the A2P/TCR brand record —
+              carriers check the registered details against the live site. */}
+          <div>
+            <div className="mb-3 text-xs font-semibold uppercase tracking-widest text-white/60">
+              Contact
+            </div>
+            <ul className="space-y-2 text-sm text-white/65">
+              <li>
+                <a href="mailto:matt@welgent.com" className="transition-colors hover:text-white">
+                  matt@welgent.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+14438569230" className="transition-colors hover:text-white">
+                  (443) 856-9230
+                </a>
+              </li>
+              <li>
+                <a href="#audit" data-book className="transition-colors hover:text-white">
+                  Let&rsquo;s Talk
+                </a>
+              </li>
+            </ul>
+            <address className="mt-4 text-sm not-italic leading-relaxed text-white/50">
+              Welgent
+              <br />
+              7412 Newham Ln
+              <br />
+              Sarasota, FL 34240
+            </address>
+          </div>
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-white/45 sm:flex-row">
