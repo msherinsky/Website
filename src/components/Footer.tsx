@@ -51,8 +51,8 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-white/45 sm:flex-row">
           <p>© 2026 Welgent. All rights reserved.</p>
           <nav aria-label="Legal links" className="flex gap-6">
-            <a href="#" className="hover:text-white/80">Privacy Policy</a>
-            <a href="#" className="hover:text-white/80">Terms of Service</a>
+            <Link href="/privacy" className="hover:text-white/80">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white/80">Terms of Service</Link>
           </nav>
         </div>
       </div>
