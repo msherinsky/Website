@@ -5,7 +5,6 @@ import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { SmoothScroll } from "@/components/SmoothScroll";
-import { BookingModal } from "@/components/BookingModal";
 import { ZoomOverlay } from "@/components/ZoomOverlay";
 
 /*
@@ -104,22 +103,27 @@ export default function RootLayout({
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
-        <BookingModal />
         <ZoomOverlay />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSONLD) }} />
 
-        {/* AI chat widget config (tiny inline, first-party, no cookies) */}
-        <Script id="wg-config" strategy="beforeInteractive">
-          {`window.WG_CONFIG={client:"welgent",name:"Alex",subtitle:"Welgent Sales Assistant",greeting:"Hi! I'm Alex from Welgent. We help local service businesses get found on Google, look credible, and book more jobs. What can I help you with?",colorPrimary:"#EB9A01",colorDark:"#C97F00",colorHeader:"#161412",quickReplies:"Let's Talk|Never Miss a Lead|Get Found First"};`}
-        </Script>
+        {/* LeadConnector chat widget. This is the site's ONLY data-collection
+            surface — there are no forms and no booking embeds anywhere, so the
+            chat is the single opt-in point (required for A2P registration). */}
+        <Script
+          id="lc-chat-widget"
+          strategy="afterInteractive"
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6a68f531702ca026d57b5c1f"
+          data-source="WEB_USER"
+        />
 
-        {/* Defer the third-party embeds (GHL booking form_embed + chat widget)
-            until the first real user interaction — keeps their JS + third-party
-            cookies out of initial load (faster LCP, no 3p cookies in audits).
-            Real users trigger it instantly on their first scroll/tap/click. */}
-        <Script id="defer-3p" strategy="afterInteractive">
-          {`(function(){var done=false;function go(){if(done)return;done=true;['https://api.welgent.com/js/form_embed.js','/chat-widget.js'].forEach(function(src){var s=document.createElement('script');s.src=src;s.async=true;document.body.appendChild(s);});}var evs=['pointerdown','keydown','scroll','touchstart','mousemove'];function on(){go();evs.forEach(function(e){window.removeEventListener(e,on)});}evs.forEach(function(e){window.addEventListener(e,on,{once:true,passive:true})});})();`}
+        {/* Every [data-book] CTA opens that chat. Delegated from the document so
+            CTAs on client-navigated routes keep working; polls briefly because
+            the widget script is third-party and loads async. */}
+        <Script id="open-chat" strategy="afterInteractive">
+          {`(function(){function w(){var l=window.leadConnector&&window.leadConnector.chatWidget;return(l&&typeof l.openWidget==='function')?l:null}function launcher(){var h=document.querySelector('chat-widget'),r=h&&h.shadowRoot,b=r&&r.getElementById('lc_text-widget--btn');if(b){b.click();return true}return false}function open(){var l=w();if(l){l.openWidget();return}var t=0,i=setInterval(function(){var r=w();if(r){clearInterval(i);r.openWidget();return}t+=200;if(t>=10000){clearInterval(i);launcher()}},200)}document.addEventListener('click',function(e){var t=e.target;if(!t||typeof t.closest!=='function')return;if(!t.closest('[data-book],[data-chat]'))return;e.preventDefault();open()});window.openWelgentChat=open;})();`}
         </Script>
       </body>
     </html>
