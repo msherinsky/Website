@@ -120,14 +120,18 @@ export default function RootLayout({
 
         {/* LeadConnector chat widget. This is the site's ONLY data-collection
             surface — there are no forms and no booking embeds anywhere, so the
-            chat is the single opt-in point (required for A2P registration). */}
-        <Script
-          id="lc-chat-widget"
-          strategy="afterInteractive"
+            chat is the single opt-in point (required for A2P registration).
+
+            Deliberately a plain <script>, NOT next/script: the A2P compliance
+            scanner reads the served HTML, and next/script injects the tag
+            client-side after hydration, so the snippet never appeared in the
+            source. This renders the snippet verbatim as GHL supplies it. */}
+        <script
           src="https://widgets.leadconnectorhq.com/loader.js"
           data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
           data-widget-id="6a68fdc2f2ad83082178eb2a"
           data-source="WEB_USER"
+          async
         />
 
         {/* Every [data-book] CTA opens that chat. Delegated from the document so
