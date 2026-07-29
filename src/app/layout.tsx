@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Script from "next/script";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -118,28 +117,23 @@ export default function RootLayout({
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSONLD) }} />
 
-        {/* LeadConnector chat widget. This is the site's ONLY data-collection
-            surface — there are no forms and no booking embeds anywhere, so the
-            chat is the single opt-in point (required for A2P registration).
+        {/* LeadConnector chat widget, exactly as GHL supplies it. This is the
+            site's ONLY data-collection surface — there are no forms and no
+            booking embeds anywhere, so the chat is the single opt-in point
+            (required for A2P registration).
 
             Deliberately a plain <script>, NOT next/script: the A2P compliance
             scanner reads the served HTML, and next/script injects the tag
             client-side after hydration, so the snippet never appeared in the
-            source. This renders the snippet verbatim as GHL supplies it. */}
+            source. Keep this snippet verbatim — no added attributes, no
+            wrapper JS driving it. */}
+        {/* eslint-disable-next-line @next/next/no-sync-scripts -- kept verbatim as GHL supplies it */}
         <script
           src="https://widgets.leadconnectorhq.com/loader.js"
           data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
           data-widget-id="6a6a0ce626a343b92b5219ab"
           data-source="WEB_USER"
-          async
         />
-
-        {/* Every [data-book] CTA opens that chat. Delegated from the document so
-            CTAs on client-navigated routes keep working; polls briefly because
-            the widget script is third-party and loads async. */}
-        <Script id="open-chat" strategy="afterInteractive">
-          {`(function(){function w(){var l=window.leadConnector&&window.leadConnector.chatWidget;return(l&&typeof l.openWidget==='function')?l:null}function launcher(){var h=document.querySelector('chat-widget'),r=h&&h.shadowRoot,b=r&&r.getElementById('lc_text-widget--btn');if(b){b.click();return true}return false}function open(){var l=w();if(l){l.openWidget();return}var t=0,i=setInterval(function(){var r=w();if(r){clearInterval(i);r.openWidget();return}t+=200;if(t>=10000){clearInterval(i);launcher()}},200)}document.addEventListener('click',function(e){var t=e.target;if(!t||typeof t.closest!=='function')return;if(!t.closest('[data-book],[data-chat]'))return;e.preventDefault();open()});window.openWelgentChat=open;})();`}
-        </Script>
       </body>
     </html>
   );
