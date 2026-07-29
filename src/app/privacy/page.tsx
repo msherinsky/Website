@@ -13,7 +13,7 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
-      updated="July 28, 2026"
+      updated="July 29, 2026"
       intro="This policy explains what information Welgent collects, how we use it, and the choices you have — including how we handle phone numbers and SMS consent."
     >
       <LegalSection heading="Who we are">
@@ -49,7 +49,10 @@ export default function PrivacyPage() {
       <LegalSection heading="How we use your information">
         <ul>
           <li>To respond to your question and follow up about our services.</li>
-          <li>To send you text messages, if you have given consent (see below).</li>
+          <li>
+            To send you text messages, if you have given consent — both replies about your inquiry and occasional
+            messages about our services (see below).
+          </li>
           <li>To provide and improve the services you have asked us about.</li>
           <li>To meet legal or regulatory obligations.</li>
         </ul>
@@ -59,9 +62,11 @@ export default function PrivacyPage() {
       <LegalSection heading="SMS, mobile information, and consent">
         <p>
           If you provide your phone number in our chat and agree to receive text messages, you are opting in to
-          receive SMS from Welgent. Message frequency varies. Message and data rates may apply. Reply{" "}
-          <strong>STOP</strong> at any time to opt out, or <strong>HELP</strong> for help. Consent to receive text
-          messages is not a condition of purchasing anything from us.
+          receive SMS from Welgent. This is a mixed messaging program: messages may include replies and updates
+          about your inquiry as well as occasional information about our services, availability, or offers.
+          Message frequency varies. Message and data rates may apply. Reply <strong>STOP</strong> at any time to
+          opt out, or <strong>HELP</strong> for help. Consent to receive text messages is not a condition of
+          purchasing anything from us.
         </p>
         <p>
           <strong>

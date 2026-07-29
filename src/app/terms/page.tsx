@@ -13,7 +13,7 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms of Service"
-      updated="July 28, 2026"
+      updated="July 29, 2026"
       intro="These terms cover your use of the Welgent website and our SMS messaging program."
     >
       <LegalSection heading="Using this site">
@@ -29,15 +29,16 @@ export default function TermsPage() {
           or TCR reviewer can confirm every required element in one place. */}
       <LegalSection heading="SMS messaging terms">
         <p>
-          <strong>Program description.</strong> Welgent sends text messages to people who have asked us about our
-          services. Messages relate to your inquiry — replying to your questions, scheduling or confirming a call
-          or appointment, and following up about the services you asked about.
+          <strong>Program description.</strong> This is a mixed messaging program: we send both conversational and
+          promotional messages from the same number. Most messages relate to your inquiry — replying to your
+          questions, scheduling or confirming a call or appointment, and following up about the services you asked
+          about. We may also occasionally send you information about our services, availability, or offers.
         </p>
         <p>
           <strong>How you opt in.</strong> Welgent’s website has no contact forms. The only way to opt in is
           through our chat widget: you provide your phone number and affirmatively agree to receive text messages
-          from us. We do not add anyone to our messaging program who has not given consent this way, and we do not
-          buy or import phone number lists.
+          from us. Opting in covers both kinds of message described above. We do not add anyone to our messaging
+          program who has not given consent this way, and we do not buy or import phone number lists.
         </p>
         <p>
           <strong>Consent is not a condition of purchase.</strong> You do not have to agree to receive text
@@ -45,6 +46,7 @@ export default function TermsPage() {
         </p>
         <p>
           <strong>Message frequency.</strong> Message frequency varies based on your conversation with us.
+          Promotional messages, if any, are infrequent.
         </p>
         <p>
           <strong>Cost.</strong> Message and data rates may apply. Welgent does not charge for the messages
