@@ -36,9 +36,11 @@ export default function TermsPage() {
         </p>
         <p>
           <strong>How you opt in.</strong> Welgent’s website has no contact forms. The only way to opt in is
-          through our chat widget: you provide your phone number and affirmatively agree to receive text messages
-          from us. Opting in covers both kinds of message described above. We do not add anyone to our messaging
-          program who has not given consent this way, and we do not buy or import phone number lists.
+          through our chat widget: you enter your name and phone number and tick a consent box. There are two
+          separate boxes, one for messages about your inquiry and one for promotional messages, and both start
+          unticked. You may tick either, both, or neither, and we only send the kinds of message you agreed to. We
+          do not add anyone to our messaging program who has not given consent this way, and we do not buy or
+          import phone number lists.
         </p>
         <p>
           <strong>Consent is not a condition of purchase.</strong> You do not have to agree to receive text

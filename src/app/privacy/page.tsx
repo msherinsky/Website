@@ -33,8 +33,7 @@ export default function PrivacyPage() {
         <ul>
           <li>
             <strong>Information you provide in chat.</strong> If you start a conversation with us, we collect what
-            you type — typically your name, business name, email address, and phone number, along with the
-            contents of your messages.
+            you type — your name, your phone number, and the contents of your messages.
           </li>
           <li>
             <strong>Information you send directly.</strong> If you email or call us, we keep that correspondence.
@@ -61,9 +60,10 @@ export default function PrivacyPage() {
 
       <LegalSection heading="SMS, mobile information, and consent">
         <p>
-          If you provide your phone number in our chat and agree to receive text messages, you are opting in to
-          receive SMS from Welgent. This is a mixed messaging program: messages may include replies and updates
-          about your inquiry as well as occasional information about our services, availability, or offers.
+          If you provide your phone number in our chat and tick a consent box, you are opting in to receive SMS
+          from Welgent. This is a mixed messaging program: messages may include replies and updates about your
+          inquiry as well as occasional information about our services, availability, or offers. The chat offers
+          two separate consent boxes, one for each kind of message, so you choose which you receive.
           Message frequency varies. Message and data rates may apply. Reply <strong>STOP</strong> at any time to
           opt out, or <strong>HELP</strong> for help. Consent to receive text messages is not a condition of
           purchasing anything from us.
